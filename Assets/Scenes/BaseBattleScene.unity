@@ -1099,6 +1099,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 421866092}
     m_Modifications:
+    - target: {fileID: 3316570346216257490, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316570346216257490, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316570346216257490, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316570346216257490, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4636464369040805451, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
       propertyPath: m_Name
       value: EnemyInfoPanel
@@ -1185,6 +1201,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6459036753458291283, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189513929390651903, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189513929390651903, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189513929390651903, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189513929390651903, guid: ac52dfe5bc782c7408c3ab87f32491ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
