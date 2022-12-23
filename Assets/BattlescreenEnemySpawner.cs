@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 namespace JRPG.BattleSystem
 {
-    public class EnemyBattlescreenSpawner : MonoBehaviour
+    public class BattlescreenEnemySpawner : MonoBehaviour
     {
         [Header("Enemies")] 
         [SerializeField] private List<GameObject> enemies;
