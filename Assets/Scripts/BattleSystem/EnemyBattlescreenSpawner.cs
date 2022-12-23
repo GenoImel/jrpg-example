@@ -7,7 +7,6 @@ namespace JRPG.BattleSystem
 {
     internal sealed class EnemyBattlescreenSpawner : MonoBehaviour
     {
-        [FormerlySerializedAs("enemies")]
         [Header("Enemies")] 
         [SerializeField] private List<GameObject> enemyTypes;
         
