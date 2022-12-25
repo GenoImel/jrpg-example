@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using JRPG.Utilities;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace JRPG.BattleSystem
 {
-    internal sealed class EnemyBattlescreenSpawner : MonoBehaviour
+    internal sealed class EnemyBattleScreenSpawner : MonoBehaviour
     {
         [Header("Enemies")] 
         [SerializeField] private List<GameObject> enemyTypes;
@@ -25,16 +24,9 @@ namespace JRPG.BattleSystem
 
         void Start()
         {
-            var bounds = gridPlane.mesh.bounds;
-            var minBounds = gridPlane.transform.TransformPoint(bounds.min);
-            var maxBounds = gridPlane.transform.TransformPoint(bounds.max);
+            var plane = GridGenerator.DefineXZPlane(gridPlane);
             
-            gridPoints = GridGenerator.Create2DGrid(
-                new Vector2(minBounds.x, minBounds.z), 
-                new Vector2(maxBounds.x, maxBounds.z), 
-                numRow, 
-                numCol
-                );
+            gridPoints = GridGenerator.Create2DGrid(plane, numRow, numCol);
             
             PlaceEnemies();
         }
