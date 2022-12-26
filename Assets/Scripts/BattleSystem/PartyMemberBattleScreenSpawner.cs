@@ -21,6 +21,8 @@ namespace JRPG.BattleSystem
 
         [SerializeField] private float popInHeight = 2f;
 
+        [SerializeField] private PartyMemberUICreator uiCreator;
+
         [Header("Grid")] 
         [SerializeField] private MeshFilter gridPlane;
         
