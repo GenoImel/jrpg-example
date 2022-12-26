@@ -25,7 +25,7 @@ namespace JRPG.Utilities
         }
         
         /// <summary>
-        /// Uses the Fisher-Yates shuffle to shuffle a list of Vector3.
+        /// Uses the Fisher-Yates shuffle to shuffle a list of Vector2.
         /// </summary>
         /// <param name="vectorList">List of Vector2 to be shuffled.</param>
         /// <returns>Returns a list of Vector2.</returns>
