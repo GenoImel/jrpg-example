@@ -1,22 +1,30 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace JRPG.BattleSystem
 {
     internal sealed class PartyMemberUICreator : MonoBehaviour
     {
+        public delegate void PartyMemberUICreated(BattleScreenProfileController ui);
 
+        public static event PartyMemberUICreated OnPartyMemberUICreated;
+        
         void Awake()
         {
-            PartyMember.OnPartyMemberAdded += OnNewPartyMemberAdded;
+            BattleScreenPartyMember.OnPartyMemberAdded += OnNewPartyMemberAdded;
         }
 
-        public void OnNewPartyMemberAdded(PartyMember partyMember)
+        public void OnNewPartyMemberAdded(BattleScreenPartyMember battleScreenPartyMember)
         {
-            Instantiate(
-                partyMember.partyMemberUIPrefab,
+            var ui = Instantiate(
+                battleScreenPartyMember.partyMemberUIPrefab,
                 this.transform
             );
+
+            //TODO: wrap this in a class so you don't have to GetComponent
+            var profileController = ui.GetComponent<BattleScreenProfileController>();
+            profileController.battleScreenPartyMember = battleScreenPartyMember;
+            
+            OnPartyMemberUICreated?.Invoke(profileController);
         }
 
     }

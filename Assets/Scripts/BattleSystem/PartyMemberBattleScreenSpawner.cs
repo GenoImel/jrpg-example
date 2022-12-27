@@ -1,9 +1,7 @@
 using System.Collections.Generic;
-using System.IO;
-using JRPG.DataClasses;
+using JRPG.DataClasses.SaveData;
 using Newtonsoft.Json;
 using JRPG.Utilities;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -20,8 +18,6 @@ namespace JRPG.BattleSystem
         [SerializeField] private string pathToPartyMembers = "Assets/Art/PartyMembers/";
 
         [SerializeField] private float popInHeight = 2f;
-
-        [SerializeField] private PartyMemberUICreator uiCreator;
 
         [Header("Grid")] 
         [SerializeField] private MeshFilter gridPlane;
@@ -95,7 +91,7 @@ namespace JRPG.BattleSystem
             for( int i = 0; i < partyInfo.partyMembers.Count; i++)
             {
                 var partyMemberPrefab = AssetDatabase.LoadAssetAtPath(
-                    pathToPartyMembers + partyInfo.partyMembers[i] + ".prefab",
+                    pathToPartyMembers + partyInfo.partyMembers[i] + "_BattleScreen.prefab",
                     typeof(GameObject));
 
                 Instantiate(

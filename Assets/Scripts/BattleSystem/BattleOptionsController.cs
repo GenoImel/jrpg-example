@@ -7,18 +7,18 @@ namespace JRPG.BattleSystem
     internal sealed class BattleOptionsController : MonoBehaviour
     {
         [Header("Panels")] 
-        [SerializeField] private GameObject AttackPanel;
+        [SerializeField] private GameObject attackPanel;
 
-        [SerializeField] private GameObject MagicPanel;
+        [SerializeField] private GameObject magicPanel;
 
-        [SerializeField] private GameObject ItemPanel;
+        [SerializeField] private GameObject itemPanel;
 
-        [SerializeField] private GameObject LimitPanel;
+        [SerializeField] private GameObject limitPanel;
 
-        [SerializeField] private GameObject EtcPanel;
+        [SerializeField] private GameObject etcPanel;
 
         [Header("Misc")] 
-        [SerializeField] private GameObject PageNumber;
+        [SerializeField] private GameObject pageNumber;
 
     }
 }
