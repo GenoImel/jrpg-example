@@ -1,0 +1,26 @@
+{
+  "charms": [
+    {
+      "charmName": "Healing Touch",
+      "charmAttack": 0,
+      "charmHeal": 75,
+      "charmStatusEffect": "",
+      "charmStatusEffectChance": 0.0
+    },
+    {
+      "charmName": "Flame Strike",
+      "charmAttack": 50,
+      "charmHeal": 0,
+      "charmStatusEffect": "",
+      "charmStatusEffectChance": 0.0
+    },
+    {
+      "charmName": "Magical Slap",
+      "charmAttack": 25,
+      "charmHeal": 0,
+      "charmStatusEffect": "Concussed",
+      "charmStatusEffectChance": 0.50
+    }
+    
+  ]
+}

@@ -34,7 +34,7 @@ namespace JRPG.BattleSystem
         void Start()
         {
             OnPartyMemberAdded?.Invoke(this);
-            partyMemberUI.StartUpdateWaitBar();
+            partyMemberUI.StartUpdateRestBar();
         }
 
         void Update()

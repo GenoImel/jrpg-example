@@ -1,0 +1,30 @@
+{
+    "gems": [
+      
+      {
+        "gemName": "Stab",
+        "gemAttack": 15,
+        "gemStatusEffect": "",
+        "gemStatusEffectChance": 0
+      },
+      {
+        "gemName": "Slash",
+        "gemAttack": 20,
+        "gemStatusEffect": "",
+        "gemStatusEffectChance": 0
+      },
+      {
+        "gemName": "Scattershot",
+        "gemAttack": 15,
+        "gemStatusEffect": "",
+        "gemStatusEffectChance": 0
+      },
+      {
+        "gemName": "Blindside",
+        "gemAttack": 23,
+        "gemStatusEffect": "Blurred Vision",
+        "gemStatusEffectChance": 0.75
+      }
+      
+    ]
+}

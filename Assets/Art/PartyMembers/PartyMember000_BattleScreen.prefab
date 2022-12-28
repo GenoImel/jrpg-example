@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0be422183752e44831fc8aaf9c4a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partyMemberUIPrefab: {fileID: 7443496799353260623, guid: 376fa3b3ef8bf66479d10a4c07346d7e, type: 3}
+  partyMemberUIPrefab: {fileID: 7443496799353260623, guid: d4ed5d9a8335de54d99a5a52159489f3, type: 3}
   status: 0
 --- !u!1 &6593796988319999394
 GameObject:

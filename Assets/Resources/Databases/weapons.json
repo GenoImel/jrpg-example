@@ -1,0 +1,24 @@
+{
+  "weapons": [
+    
+    {
+      "weaponName": "Rusty Swashbuckler",
+      "weaponType": "Sword",
+      "weaponStance": "one-hand",
+      "weaponAttack": 15,
+      "weaponDefense": 10,
+      "weaponSpeed": 5,
+      "weaponGemSlots": 2
+    },
+    {
+      "weaponName": "Weathered Shotgun",
+      "weaponType": "Gun",
+      "weaponStance": "one-hand",
+      "weaponAttack": 20,
+      "weaponDefense": 5,
+      "weaponSpeed": 10,
+      "weaponGemSlots": 2
+    }
+    
+  ]
+}

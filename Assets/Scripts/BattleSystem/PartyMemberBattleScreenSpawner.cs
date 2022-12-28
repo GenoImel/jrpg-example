@@ -91,7 +91,7 @@ namespace JRPG.BattleSystem
             for( int i = 0; i < partyInfo.partyMembers.Count; i++)
             {
                 var partyMemberPrefab = AssetDatabase.LoadAssetAtPath(
-                    pathToPartyMembers + partyInfo.partyMembers[i] + "_BattleScreen.prefab",
+                    pathToPartyMembers + partyInfo.partyMembers[i].name + "_BattleScreen.prefab",
                     typeof(GameObject));
 
                 Instantiate(

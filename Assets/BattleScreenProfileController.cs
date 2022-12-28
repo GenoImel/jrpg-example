@@ -40,12 +40,12 @@ namespace JRPG.BattleSystem
             limitBar.localScale = new Vector3(currentLimitValue, 1f, 1f);
         }
 
-        public void StartUpdateWaitBar()
+        public void StartUpdateRestBar()
         {
-            StartCoroutine(UpdateWaitBar());
+            StartCoroutine(UpdateRestBar());
         }
         
-        private IEnumerator UpdateWaitBar()
+        private IEnumerator UpdateRestBar()
         {
             for (var restVal = currentRestValue; restVal <= maxRestValue; restVal += Time.deltaTime)
             {

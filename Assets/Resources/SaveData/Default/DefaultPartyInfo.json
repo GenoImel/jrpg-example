@@ -1,11 +1,60 @@
 {
 
-"partyMembers": 
-[
-  "PartyMember000", 
-  "PartyMember001",
-  "PartyMember002", 
-  "PartyMember003"
-]
+  "partyMembers": [
+    {
+      "name": "PartyMember000",
+      "level": 5,
+      "health": 150,
+      "maxHealth": 150,
+      "magic": 50,
+      "maxMagic": 50,
+      "basePhysicalAttack": 15,
+      "baseMagicAttack": 10,
+      "baseDefense": 10,
+      "baseSpeed": 12,
+      "positionOnField": "Front",
+      "handedness": "right",
+      
+      "equipment": 
+      {
+        "hat": "Feathered Cap",
+        "shirt": "Captain's Shirt",
+        "shoulders": "Insect Carapace",
+        "gloves": "Leather Gauntlets",
+        "pants": "Patchwork Trousers",
+        "boots": "Scuffed Boots"
+      },
+      
+      "activeRings":
+      {
+        "leftRing1": "Heal Ring",
+        "leftRing2": "Dodge Ring",
+        "rightRing1": "Steal Ring",
+        "rightRing2": "Damage Ring"
+      },
+      
+      "activeNecklace": {
+        "necklaceName": "Nostalgic Locket",
+        "numCharmSlots": 4,
+        "charms": ["Healing Touch", "Flame Strike", "Magical Slap", " "]
+      },
+      
+      "activeWeapons": {
+        "rightHandWeapon": 
+        {
+          "weaponName": "Rusty Swashbuckler",
+          "numGemSlots": 2,
+          "gemSlots": ["Stab", "Slash"]
+        },
+        "leftHandWeapon": 
+        {
+          "weaponName": "Weathered Shotgun",
+          "numGemSlots": 2,
+          "gemSlots": ["Scattershot", "Blindside"]
+        }
+      }
+      
+    }
+  ]
 
 }
