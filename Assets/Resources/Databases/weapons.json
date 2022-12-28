@@ -18,6 +18,51 @@
       "weaponDefense": 5,
       "weaponSpeed": 10,
       "weaponGemSlots": 2
+    },
+    {
+      "weaponName": "Giant's Greatsword",
+      "weaponType": "Sword",
+      "weaponStance": "two-hand",
+      "weaponAttack": 40,
+      "weaponDefense": 10,
+      "weaponSpeed": 2,
+      "weaponGemSlots": 5
+    },
+    {
+      "weaponName": "Interesting Stick",
+      "weaponType": "Wand",
+      "weaponStance": "one-hand",
+      "weaponAttack": 5,
+      "weaponDefense": 20,
+      "weaponSpeed": 15,
+      "weaponGemSlots": 2
+    },
+    {
+      "weaponName": "Herb Sachet",
+      "weaponType": "Misc",
+      "weaponStance": "one-hand",
+      "weaponAttack": 1,
+      "weaponDefense": 25,
+      "weaponSpeed": 12,
+      "weaponGemSlots": 3
+    },
+    {
+      "weaponName": "Hero's Sword",
+      "weaponType": "Sword",
+      "weaponStance": "one-hand",
+      "weaponAttack": 25,
+      "weaponDefense": 20,
+      "weaponSpeed": 12,
+      "weaponGemSlots": 3
+    },
+    {
+      "weaponName": "Hero's Bow",
+      "weaponType": "Bow",
+      "weaponStance": "one-hand",
+      "weaponAttack": 25,
+      "weaponDefense": 12,
+      "weaponSpeed": 10,
+      "weaponGemSlots": 2
     }
     
   ]

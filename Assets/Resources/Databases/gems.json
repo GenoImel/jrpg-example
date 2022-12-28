@@ -3,27 +3,73 @@
       
       {
         "gemName": "Stab",
+        "gemType": "Sword",
         "gemAttack": 15,
         "gemStatusEffect": "",
         "gemStatusEffectChance": 0
       },
       {
         "gemName": "Slash",
+        "gemType": "Sword",
         "gemAttack": 20,
         "gemStatusEffect": "",
         "gemStatusEffectChance": 0
       },
       {
         "gemName": "Scattershot",
+        "gemType": "Gun",
         "gemAttack": 15,
         "gemStatusEffect": "",
         "gemStatusEffectChance": 0
       },
       {
         "gemName": "Blindside",
+        "gemType": "Gun",
         "gemAttack": 23,
         "gemStatusEffect": "Blurred Vision",
         "gemStatusEffectChance": 0.75
+      },
+      {
+        "gemName": "Sleepy Time",
+        "gemType": "Misc",
+        "gemAttack": 2,
+        "gemStatusEffect": "Sleep",
+        "gemStatusEffectChance": 0.75
+      },
+      {
+        "gemName": "Poison Slap",
+        "gemType": "Misc",
+        "gemAttack": 5,
+        "gemStatusEffect": "Poison",
+        "gemStatusEffectChance": 0.75
+      },
+      {
+        "gemName": "Bolt",
+        "gemType": "Wand",
+        "gemAttack": 10,
+        "gemStatusEffect": "Stunned",
+        "gemStatusEffectChance": 0.10
+      },
+      {
+        "gemName": "Ember",
+        "gemType": "Wand",
+        "gemAttack": 12,
+        "gemStatusEffect": " ",
+        "gemStatusEffectChance": 0.0
+      },
+      {
+        "gemName": "Fire Rain",
+        "gemType": "Bow",
+        "gemAttack": 15,
+        "gemStatusEffect": " ",
+        "gemStatusEffectChance": 0.0
+      },
+      {
+        "gemName": "Ice Rain",
+        "gemType": "Bow",
+        "gemAttack": 12,
+        "gemStatusEffect": " ",
+        "gemStatusEffectChance": 0.0
       }
       
     ]

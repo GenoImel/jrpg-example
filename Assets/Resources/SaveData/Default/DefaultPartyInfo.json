@@ -3,7 +3,7 @@
   "partyMembers": [
     {
       "name": "PartyMember000",
-      "level": 5,
+      "level": 7,
       "health": 150,
       "maxHealth": 150,
       "magic": 50,
@@ -12,7 +12,7 @@
       "baseMagicAttack": 10,
       "baseDefense": 10,
       "baseSpeed": 12,
-      "positionOnField": "Front",
+      "positionOnField": "front",
       "handedness": "right",
       
       "equipment": 
@@ -54,7 +54,175 @@
         }
       }
       
+    },
+    {
+      "name": "PartyMember001",
+      "level": 6,
+      "health": 200,
+      "maxHealth": 200,
+      "magic": 15,
+      "maxMagic": 15,
+      "basePhysicalAttack": 25,
+      "baseMagicAttack": 2,
+      "baseDefense": 20,
+      "baseSpeed": 5,
+      "positionOnField": "front",
+      "handedness": "right",
+
+      "equipment":
+      {
+        "hat": "Fez",
+        "shirt": "Pajama Shirt",
+        "shoulders": " ",
+        "gloves": "Mittens",
+        "pants": "Pajama Pants",
+        "boots": "Bunny Slippers"
+      },
+
+      "activeRings":
+      {
+        "leftRing1": "Heal Ring",
+        "leftRing2": "Dodge Ring",
+        "rightRing1": "Steal Ring",
+        "rightRing2": "Damage Ring"
+      },
+
+      "activeNecklace": {
+        "necklaceName": "Stained Silver Chain",
+        "numCharmSlots": 1,
+        "charms": [" "]
+      },
+
+      "activeWeapons": {
+        "rightHandWeapon":
+        {
+          "weaponName": "Giant's Greatsword",
+          "numGemSlots": 5,
+          "gemSlots": ["Stab", "Slash", " ", " ", " "]
+        },
+        "leftHandWeapon":
+        {
+          "weaponName": " ",
+          "numGemSlots": 0,
+          "gemSlots": [" "]
+        }
+      }
+    }, 
+    {
+      "name": "PartyMember002",
+      "level": 5,
+      "health": 125,
+      "maxHealth": 125,
+      "magic": 75,
+      "maxMagic": 75,
+      "basePhysicalAttack": 5,
+      "baseMagicAttack": 25,
+      "baseDefense": 5,
+      "baseSpeed": 18,
+      "positionOnField": "back",
+      "handedness": "left",
+
+      "equipment":
+      {
+        "hat": "Silver Circlet",
+        "shirt": "Sundress",
+        "shoulders": "Fairy Pauldrons",
+        "gloves": "Lacey White Gloves",
+        "pants": "Grey Tights",
+        "boots": "Ballet Slippers"
+      },
+
+      "activeRings":
+      {
+        "leftRing1": "Heal Ring",
+        "leftRing2": "Dodge Ring",
+        "rightRing1": "Steal Ring",
+        "rightRing2": "Damage Ring"
+      },
+
+      "activeNecklace": {
+        "necklaceName": "Simple Gold Chain",
+        "numCharmSlots": 2,
+        "charms": ["Healing Touch", " "]
+      },
+
+      "activeWeapons": {
+        "rightHandWeapon":
+        {
+          "weaponName": "Herb Sachet",
+          "numGemSlots": 3,
+          "gemSlots": ["Sleepy Time", "Poison Slap", " "]
+        },
+        "leftHandWeapon":
+        {
+          "weaponName": "Interesting Stick",
+          "numGemSlots": 2,
+          "gemSlots": ["Bolt", "Ember"]
+        }
+      }
+    },
+    {
+      "name": "PartyMember003",
+      "level": 7,
+      "health": 175,
+      "maxHealth": 175,
+      "magic": 55,
+      "maxMagic": 55,
+      "basePhysicalAttack": 20,
+      "baseMagicAttack": 15,
+      "baseDefense": 14,
+      "baseSpeed": 15,
+      "positionOnField": "back",
+      "handedness": "left",
+      "equipment": {
+        "hat": "Elf Hat",
+        "shirt": "Green Tunic",
+        "shoulders": "Leather Pauldrons",
+        "gloves": "Leather Gauntlets",
+        "pants": "Green Kilt",
+        "boots": "Brown Leather Boots"
+      },
+      "activeRings": {
+        "leftRing1": "Heal Ring",
+        "leftRing2": "Dodge Ring",
+        "rightRing1": "Steal Ring",
+        "rightRing2": "Damage Ring"
+      },
+      "activeNecklace": {
+        "necklaceName": "Stranger's Locket",
+        "numCharmSlots": 5,
+        "charms": [
+          "Healing Touch",
+          "Flame Strike",
+          "Magical Slap",
+          " ",
+          " "
+        ]
+      },
+      "activeWeapons": {
+        "rightHandWeapon": {
+          "weaponName": "Hero's Sword",
+          "numGemSlots": 3,
+          "gemSlots": [
+            "Stab",
+            "Slash",
+            " "
+          ]
+        },
+        "leftHandWeapon": {
+          "weaponName": "Hero's Bow",
+          "numGemSlots": 2,
+          "gemSlots": [
+            "Fire Rain",
+            "Ice Rain"
+          ]
+        }
+      }
     }
+    
+    
   ]
+  
+  
 
 }
