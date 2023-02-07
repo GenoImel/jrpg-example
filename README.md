@@ -1,6 +1,6 @@
 # JRPG Example
 
-An example project that is heavily inspired by mechanics from early Square Enix and Nintendo games, along with some creative freedom in combining these mechanics.
+An example project that is heavily inspired by mechanics from early Square Enix and Nintendo JRPGs, along with some creative freedom in combining these mechanics.
 
 ## Requirements
 
