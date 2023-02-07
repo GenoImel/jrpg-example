@@ -4,15 +4,13 @@ using UnityEngine;
 
 namespace JRPG.DataClasses.SaveData
 {
-    [System.Serializable]
     internal sealed class PartyInfo
     {
         [Header("Party Members")]
         [SerializeField]
         public List<PartyMember> partyMembers;
     }
-
-    [System.Serializable]
+    
     internal sealed class PartyMember
     {
         public string name;

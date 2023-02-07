@@ -1,5 +1,4 @@
 {
-
   "partyMembers": [
     {
       "name": "PartyMember000",
@@ -14,8 +13,7 @@
       "baseSpeed": 12,
       "positionOnField": "front",
       "handedness": "right",
-      
-      "equipment": 
+      "equipment":
       {
         "hat": "Feathered Cap",
         "shirt": "Captain's Shirt",
@@ -24,7 +22,6 @@
         "pants": "Patchwork Trousers",
         "boots": "Scuffed Boots"
       },
-      
       "activeRings":
       {
         "leftRing1": "Heal Ring",
@@ -32,28 +29,25 @@
         "rightRing1": "Steal Ring",
         "rightRing2": "Damage Ring"
       },
-      
       "activeNecklace": {
         "necklaceName": "Nostalgic Locket",
         "numCharmSlots": 4,
         "charms": ["Healing Touch", "Flame Strike", "Magical Slap", " "]
       },
-      
       "activeWeapons": {
-        "rightHandWeapon": 
+        "rightHandWeapon":
         {
           "weaponName": "Rusty Swashbuckler",
           "numGemSlots": 2,
           "gemSlots": ["Stab", "Slash"]
         },
-        "leftHandWeapon": 
+        "leftHandWeapon":
         {
           "weaponName": "Weathered Shotgun",
           "numGemSlots": 2,
           "gemSlots": ["Scattershot", "Blindside"]
         }
       }
-      
     },
     {
       "name": "PartyMember001",
@@ -68,7 +62,6 @@
       "baseSpeed": 5,
       "positionOnField": "front",
       "handedness": "right",
-
       "equipment":
       {
         "hat": "Fez",
@@ -78,7 +71,6 @@
         "pants": "Pajama Pants",
         "boots": "Bunny Slippers"
       },
-
       "activeRings":
       {
         "leftRing1": "Heal Ring",
@@ -86,13 +78,11 @@
         "rightRing1": "Steal Ring",
         "rightRing2": "Damage Ring"
       },
-
       "activeNecklace": {
         "necklaceName": "Stained Silver Chain",
         "numCharmSlots": 1,
         "charms": [" "]
       },
-
       "activeWeapons": {
         "rightHandWeapon":
         {
@@ -121,7 +111,6 @@
       "baseSpeed": 18,
       "positionOnField": "back",
       "handedness": "left",
-
       "equipment":
       {
         "hat": "Silver Circlet",
@@ -131,7 +120,6 @@
         "pants": "Grey Tights",
         "boots": "Ballet Slippers"
       },
-
       "activeRings":
       {
         "leftRing1": "Heal Ring",
@@ -139,13 +127,11 @@
         "rightRing1": "Steal Ring",
         "rightRing2": "Damage Ring"
       },
-
       "activeNecklace": {
         "necklaceName": "Simple Gold Chain",
         "numCharmSlots": 2,
         "charms": ["Healing Touch", " "]
       },
-
       "activeWeapons": {
         "rightHandWeapon":
         {
@@ -172,7 +158,7 @@
       "baseMagicAttack": 15,
       "baseDefense": 14,
       "baseSpeed": 15,
-      "positionOnField": "back",
+      "positionOnField": "front",
       "handedness": "left",
       "equipment": {
         "hat": "Elf Hat",
@@ -219,10 +205,5 @@
         }
       }
     }
-    
-    
   ]
-  
-  
-
 }
