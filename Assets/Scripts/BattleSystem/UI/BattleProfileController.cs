@@ -1,14 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Serialization;
+using TMPro;
 
-namespace JRPG.BattleSystem
+namespace JRPG.BattleSystem.UI
 {
-    internal sealed class BattleScreenProfileController : MonoBehaviour
+    internal sealed class BattleProfileController : MonoBehaviour
     {
-        [Header("UI Bars")] 
+        [Header("UI Elements")] 
         [SerializeField] private RectTransform restBar;
 
         [SerializeField] private RectTransform healthBar;
@@ -19,6 +18,8 @@ namespace JRPG.BattleSystem
 
         [SerializeField] private Image profilePicture;
 
+        [SerializeField] private TextMeshProUGUI characterName;
+
         [SerializeField] private float currentRestValue = 0f;
 
         [SerializeField] private float maxRestValue = 5f;
@@ -27,11 +28,30 @@ namespace JRPG.BattleSystem
 
         [SerializeField] private float maxLimitValue = 5f;
 
-        public BattleScreenPartyMember battleScreenPartyMember;
+        [SerializeField] private BattlePartyMember partyMember;
+
+        public string CharacterName
+        {
+            get => characterName.text;
+            set => characterName.text = value;
+        }
         
+        public Sprite ProfilePicture
+        {
+            get => profilePicture.sprite;
+            set => profilePicture.sprite = value;
+        }
+
+        public BattlePartyMember PartyMember
+        {
+            get => partyMember;
+            set => partyMember = value;
+        }
+
         void Start()
         {
             InitializeBars();
+            StartUpdateRestBar();
         }
 
         private void InitializeBars()
@@ -54,7 +74,7 @@ namespace JRPG.BattleSystem
                 yield return null;
             }
             
-            battleScreenPartyMember.RestingComplete();
+            partyMember.RestingComplete();
         }
 
 

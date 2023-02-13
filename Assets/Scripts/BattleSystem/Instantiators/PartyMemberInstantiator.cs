@@ -2,22 +2,22 @@ using System.Collections.Generic;
 using JRPG.DataClasses.SaveData;
 using Newtonsoft.Json;
 using JRPG.Utilities;
-using UnityEditor;
 using UnityEngine;
 
-namespace JRPG.BattleSystem
+namespace JRPG.BattleSystem.Instantiators
 {
-    internal sealed class PartyMemberBattleScreenSpawner : MonoBehaviour
+    internal sealed class PartyMemberInstantiator : MonoBehaviour
     {
 
-        [Header("Party Information")] 
-        [SerializeField] private bool useDefaultInfo = true;
+        [Header("Party Information")]
+        [SerializeField] private TextAsset defaultPartyInfoFile;
 
-        [SerializeField] private string pathToPartyInfo = "SaveData/";
-
-        [SerializeField] private string pathToPartyMembers = "Assets/Art/PartyMembers/";
+        [SerializeField] private TextAsset partyInfoFile;
 
         [SerializeField] private float popInHeight = 2f;
+        
+        [Header("Party Member ScriptableObjects")]
+        [SerializeField] private List<GameObject> partyMembers;
 
         [Header("Grid")] 
         [SerializeField] private MeshFilter gridPlane;
@@ -45,24 +45,18 @@ namespace JRPG.BattleSystem
 
         private PartyInfo LoadPartyInfo()
         {
-            TextAsset partyInfoFile;
-            PartyInfo partyInfo = null;
-            
-            if (useDefaultInfo)
+            PartyInfo currentPartyInfo = null;
+
+            if (partyInfoFile != null)
             {
-                partyInfoFile = 
-                    Resources.Load(pathToPartyInfo + "Default/DefaultPartyInfo") as TextAsset;
+                currentPartyInfo = JsonConvert.DeserializeObject<PartyInfo>(partyInfoFile.text);
             }
             else
             {
-                partyInfoFile = 
-                    Resources.Load(pathToPartyInfo + "PartyInfo") as TextAsset;
+                currentPartyInfo = JsonConvert.DeserializeObject<PartyInfo>(defaultPartyInfoFile.text); 
             }
 
-            if (partyInfoFile != null)
-                partyInfo = JsonConvert.DeserializeObject<PartyInfo>(partyInfoFile.text);
-
-            return partyInfo;
+            return currentPartyInfo;
         }
 
         private void SeparateRows(List<Vector2> gridPoints)
@@ -90,17 +84,28 @@ namespace JRPG.BattleSystem
             
             for( int i = 0; i < partyInfo.partyMembers.Count; i++)
             {
-                var partyMemberPrefab = AssetDatabase.LoadAssetAtPath(
-                    pathToPartyMembers + partyInfo.partyMembers[i].name + "_BattleScreen.prefab",
-                    typeof(GameObject));
+                var partyMember = GetPartyMemberByName(partyInfo.partyMembers[i].name);
 
                 Instantiate(
-                    partyMemberPrefab,
+                    partyMember,
                     new Vector3(frontRow[i].x, popInHeight, frontRow[i].y),
                     Quaternion.identity,
                     this.transform
                 );
             }
+        }
+
+        private GameObject GetPartyMemberByName(string charName)
+        {
+            foreach(var member in partyMembers)
+            {
+                if (member.name == charName)
+                {
+                    return member;
+                }
+            }
+
+            return null;
         }
 
     }

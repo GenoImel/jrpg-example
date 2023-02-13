@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6593796986998440993}
-  - component: {fileID: 3557261124727388548}
+  - component: {fileID: 6876150759275262593}
   m_Layer: 0
-  m_Name: PartyMember003_BattleScreen
+  m_Name: PartyMember000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3557261124727388548
+--- !u!114 &6876150759275262593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0be422183752e44831fc8aaf9c4a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partyMemberUIPrefab: {fileID: 7443496799353260623, guid: 97bf98bf7bedcb540a90950f6d6ce74b, type: 3}
+  characterName: 000
+  profilePicture: {fileID: 21300000, guid: c747078a3be6a5c44acb1f6fc28a5ea4, type: 3}
+  profileUI: {fileID: 1256404259122425029, guid: 4616b7aff0652bb4089c3e65cb738490, type: 3}
   status: 0
 --- !u!1 &6593796988319999394
 GameObject:
@@ -59,7 +61,7 @@ GameObject:
   - component: {fileID: 6593796988319999422}
   - component: {fileID: 6593796988319999421}
   - component: {fileID: 6593796988319999420}
-  - component: {fileID: 5305381315580989529}
+  - component: {fileID: 2025506944362980685}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -110,7 +112,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb0fb9bb4c83720458198f5cdd4c5c08, type: 2}
+  - {fileID: 2100000, guid: 348c3b7e2b933df43928408f2dda5bcf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,7 +147,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5305381315580989529
+--- !u!54 &2025506944362980685
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

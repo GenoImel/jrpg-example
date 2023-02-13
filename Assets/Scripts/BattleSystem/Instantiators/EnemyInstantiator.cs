@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using JRPG.Utilities;
 using UnityEngine;
 
-namespace JRPG.BattleSystem
+namespace JRPG.BattleSystem.Instantiators
 {
-    internal sealed class EnemyBattleScreenSpawner : MonoBehaviour
+    internal sealed class EnemyInstantiator : MonoBehaviour
     {
         [Header("Enemies")] 
         [SerializeField] private List<GameObject> enemyTypes;

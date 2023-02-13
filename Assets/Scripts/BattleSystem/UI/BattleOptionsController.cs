@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace JRPG.BattleSystem
+namespace JRPG.BattleSystem.UI
 {
     internal sealed class BattleOptionsController : MonoBehaviour
     {
@@ -19,6 +18,8 @@ namespace JRPG.BattleSystem
 
         [Header("Misc")] 
         [SerializeField] private GameObject pageNumber;
+
+        [SerializeField] private Image panelBackground;
 
     }
 }

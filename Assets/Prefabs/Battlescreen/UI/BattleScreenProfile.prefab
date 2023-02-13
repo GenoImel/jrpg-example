@@ -581,7 +581,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Party Member 000
+  m_text: Party Member
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1564,7 +1564,7 @@ GameObject:
   - component: {fileID: 1348054173642830262}
   - component: {fileID: 1256404259122425029}
   m_Layer: 5
-  m_Name: BattleScreenProfile_PartyMember000
+  m_Name: BattleScreenProfile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1651,11 +1651,12 @@ MonoBehaviour:
   magicBar: {fileID: 4319938241496573681}
   limitBar: {fileID: 1916419145272967586}
   profilePicture: {fileID: 9083164354301916025}
+  characterName: {fileID: 4391940153866352905}
   currentRestValue: 0
   maxRestValue: 5
   currentLimitValue: 0
   maxLimitValue: 5
-  battleScreenPartyMember: {fileID: 0}
+  partyMember: {fileID: 0}
 --- !u!1 &7677002463167854401
 GameObject:
   m_ObjectHideFlags: 0

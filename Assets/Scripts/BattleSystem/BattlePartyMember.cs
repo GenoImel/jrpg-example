@@ -1,14 +1,32 @@
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using JRPG.BattleSystem.UI;
 using UnityEngine;
 
 namespace JRPG.BattleSystem
 {
-    internal sealed class BattleScreenPartyMember : MonoBehaviour
+    internal sealed class BattlePartyMember : MonoBehaviour
     {
-        [Header("Party Member Info")] 
-        [SerializeField] public GameObject partyMemberUIPrefab;
+        [Header("General Info")] 
+        [SerializeField] private string characterName;
 
-        private BattleScreenProfileController partyMemberUI;
+        [Header("UI")]
+        [SerializeField] private Sprite profilePicture;
+        
+        [SerializeField] private BattleProfileController profileUI;
+        
+        public string CharacterName
+        {
+            get => characterName;
+        }
+
+        public Sprite ProfilePicture
+        {
+            get => profilePicture;
+        }
+
+        public BattleProfileController ProfileUI
+        {
+            get => profileUI;
+        }
         
         private enum Status
         {
@@ -22,19 +40,14 @@ namespace JRPG.BattleSystem
         [Header("Party Member State")]
         [SerializeField] private Status status = Status.Resting;
         
-        public delegate void PartyMemberAdded(BattleScreenPartyMember battleScreenPartyMember);
+        public delegate void PartyMemberAdded(BattlePartyMember battlePartyMember);
 
         public static event PartyMemberAdded OnPartyMemberAdded;
-
-        void Awake()
-        {
-            PartyMemberUICreator.OnPartyMemberUICreated += OnUIAdded;
-        }
+        
 
         void Start()
         {
             OnPartyMemberAdded?.Invoke(this);
-            partyMemberUI.StartUpdateRestBar();
         }
 
         void Update()
@@ -61,11 +74,6 @@ namespace JRPG.BattleSystem
             }
         }
 
-        public void OnUIAdded(BattleScreenProfileController ui)
-        {
-            partyMemberUI = ui;
-        }
-        
         public void RestingComplete()
         {
             status = Status.Readyforinput;
