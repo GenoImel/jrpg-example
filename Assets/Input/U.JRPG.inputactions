@@ -94,6 +94,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "AnyFaceButton",
+                    "type": "Button",
+                    "id": "ca3d99ba-43d7-4a5e-b37b-600d0dfd916e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -248,6 +257,50 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "LeftStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39b23612-25f4-477f-a292-93fa5d2a16ac",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "AnyFaceButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dda58936-af82-4bb4-93e1-dfabcc11537d",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "AnyFaceButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0df8b019-135c-44ec-a1e1-b14de7171c47",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "AnyFaceButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9085ae3e-18f0-435f-9f89-b552c8e7d220",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "AnyFaceButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
