@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3582003775003758542}
   - component: {fileID: 3719031933253520815}
+  - component: {fileID: 896073298730343353}
   m_Layer: 5
   m_Name: LimitPanel
   m_TagString: Untagged
@@ -47,6 +48,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736347703334547282}
   m_CullTransparentMesh: 1
+--- !u!225 &896073298730343353
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736347703334547282}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &684989425456030681
 PrefabInstance:
   m_ObjectHideFlags: 0

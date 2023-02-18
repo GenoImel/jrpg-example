@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7806255959459580343}
   - component: {fileID: 7806255960258909071}
   - component: {fileID: 7806255960258909070}
+  - component: {fileID: 6348021402992226737}
   - component: {fileID: 7806255960258909068}
   m_Layer: 5
   m_Name: BattleCommandsPanel
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7806255960258909065}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -82,6 +83,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &6348021402992226737
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7806255960258909065}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!114 &7806255960258909068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,14 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4387e3433d94bd34e97d7f40a2464858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPanel: {fileID: 0}
-  magicPanel: {fileID: 0}
-  itemPanel: {fileID: 0}
-  limitPanel: {fileID: 0}
-  etcPanel: {fileID: 0}
-  pageNumber: {fileID: 0}
-  pageNumberText: {fileID: 0}
-  panelBackground: {fileID: 7806255960258909070}
+  canvasGroup: {fileID: 6348021402992226737}
+  faceButtons:
+  - {fileID: -4256021037253564534, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  - {fileID: 4557948942953932904, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  - {fileID: 256541589240922355, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  - {fileID: -404835749428702899, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
 --- !u!1001 &848307489515847398
 PrefabInstance:
   m_ObjectHideFlags: 0

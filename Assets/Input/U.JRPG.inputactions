@@ -42,13 +42,40 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DPad",
-                    "type": "Value",
+                    "name": "DPadUp",
+                    "type": "Button",
                     "id": "11891ca4-1bd3-47e4-a916-46bc21f85191",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DPadDown",
+                    "type": "Button",
+                    "id": "f2a9513f-2673-45a1-ba92-13f52eb68db3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DPadLeft",
+                    "type": "Button",
+                    "id": "830e7675-39aa-474d-8e61-5943f63c7a2d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DPadRight",
+                    "type": "Button",
+                    "id": "027134c0-fcbf-4d6c-b7ee-aa39877c65c6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "R1",
@@ -90,19 +117,19 @@
                     "name": "LeftStick",
                     "type": "Value",
                     "id": "7df0e70b-5a01-4c0d-912b-173ad1fa8c60",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "AnyFaceButton",
-                    "type": "Button",
-                    "id": "ca3d99ba-43d7-4a5e-b37b-600d0dfd916e",
-                    "expectedControlType": "Button",
+                    "name": "RightStick",
+                    "type": "Value",
+                    "id": "06202c60-9fe4-44ee-a843-2b1702783dd8",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -157,40 +184,7 @@
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "DPad",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "04d892c3-4d41-4b76-b9cf-8289d3269948",
-                    "path": "<Gamepad>/dpad/down",
-                    "interactions": "Tap",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "DPad",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d8f60ac7-793b-4a23-accd-40dc3ddb260e",
-                    "path": "<Gamepad>/dpad/left",
-                    "interactions": "Tap",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "DPad",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "74297327-37c8-4a2d-b1d6-a4aa0e24343d",
-                    "path": "<Gamepad>/dpad/right",
-                    "interactions": "Tap",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "DPad",
+                    "action": "DPadUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -241,7 +235,7 @@
                 {
                     "name": "",
                     "id": "b2094b71-178c-47d0-ba2f-3c110766e9fa",
-                    "path": "<Gamepad>/leftStick/x",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "Gamepad",
@@ -251,56 +245,45 @@
                 },
                 {
                     "name": "",
-                    "id": "32848cc2-8b30-4be9-9110-09729c58d628",
-                    "path": "<Gamepad>/leftStick/y",
+                    "id": "e313c3b1-32b5-4b93-821a-47ad1fd1bab2",
+                    "path": "<Gamepad>/dpad/down",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "LeftStick",
+                    "action": "DPadDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "39b23612-25f4-477f-a292-93fa5d2a16ac",
-                    "path": "<Gamepad>/buttonWest",
+                    "id": "77fb4b42-c4ea-48a3-b7e8-7d0cbc0b7225",
+                    "path": "<Gamepad>/dpad/left",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "AnyFaceButton",
+                    "action": "DPadLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "dda58936-af82-4bb4-93e1-dfabcc11537d",
-                    "path": "<Gamepad>/buttonNorth",
+                    "id": "3f3a3cb1-d59e-49b7-960d-702ba3211f40",
+                    "path": "<Gamepad>/dpad/right",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "AnyFaceButton",
+                    "action": "DPadRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "0df8b019-135c-44ec-a1e1-b14de7171c47",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "84f76b66-233a-487e-9830-6e4e7aec9533",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "AnyFaceButton",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9085ae3e-18f0-435f-9f89-b552c8e7d220",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "Tap",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "AnyFaceButton",
+                    "action": "RightStick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

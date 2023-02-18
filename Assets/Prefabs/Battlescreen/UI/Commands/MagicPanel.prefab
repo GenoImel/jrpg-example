@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4170392721842493988}
   - component: {fileID: 4308050075614435397}
+  - component: {fileID: 3611947588372340913}
   m_Layer: 5
   m_Name: MagicPanel
   m_TagString: Untagged
@@ -47,6 +48,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174696681332865720}
   m_CullTransparentMesh: 1
+--- !u!225 &3611947588372340913
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174696681332865720}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &390309596541218594
 PrefabInstance:
   m_ObjectHideFlags: 0
