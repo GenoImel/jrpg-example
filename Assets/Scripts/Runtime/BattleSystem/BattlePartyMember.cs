@@ -1,3 +1,4 @@
+using Jrpg.Core;
 using UnityEngine;
 
 namespace Jrpg.Runtime.BattleSystem
@@ -15,10 +16,6 @@ namespace Jrpg.Runtime.BattleSystem
         [Header("Scripting")] 
         [SerializeField] private PartyMemberStateMachine stateMachine;
 
-        public delegate void PartyMemberAdded(BattlePartyMember battlePartyMember);
-
-        public static event PartyMemberAdded OnPartyMemberAdded;
-        
         public string CharacterName
         {
             get => characterName;
@@ -46,12 +43,12 @@ namespace Jrpg.Runtime.BattleSystem
 
         void Start()
         {
-            OnPartyMemberAdded?.Invoke(this);
+            GameManager.Publish(new PartyMemberAddedMessage(this));
         }
 
-        private void OnPartyMemberSelected(BattlePartyMember battlePartyMember)
+        private void OnPartyMemberSelected(PartyMemberSelectedMessage message)
         {
-            SetSelected(battlePartyMember == this);
+            SetSelected(message.PartyMember == this);
         }
 
         private void SetSelected(bool isSelected)
@@ -61,12 +58,12 @@ namespace Jrpg.Runtime.BattleSystem
 
         private void AddListeners()
         {
-            PartyCommandController.OnPartyMemberSelected += OnPartyMemberSelected;
+            GameManager.AddListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
         }
 
         private void RemoveListeners()
         {
-            PartyCommandController.OnPartyMemberSelected -= OnPartyMemberSelected;
+            GameManager.RemoveListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
         }
     }
 }

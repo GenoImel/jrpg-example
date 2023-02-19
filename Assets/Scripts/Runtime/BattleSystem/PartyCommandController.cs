@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Jrpg.Runtime.BattleSystem;
+using Jrpg.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,14 +17,6 @@ namespace Jrpg.Runtime.BattleSystem
         [SerializeField] private List<BattlePartyMember> partyMembers = new();
         
         private int partyIndex = 0;
-
-        public delegate void PartyMemberSelected(BattlePartyMember battlePartyMember);
-
-        public static event PartyMemberSelected OnPartyMemberSelected;
-
-        public delegate void BattleCommandsEnabled(bool isEnabled);
-
-        public static event BattleCommandsEnabled OnBattleCommandsEnabled;
 
         private bool isMemberSelected = false;
         private float delayCounterSeconds = 0f;
@@ -60,12 +52,12 @@ namespace Jrpg.Runtime.BattleSystem
             }
         }
 
-        private void OnNewPartyMemberReady(BattlePartyMember battlePartyMember)
+        private void OnNewPartyMemberReady(PartyMemberReadyForInputMessage message)
         {
-            partyMembers.Add(battlePartyMember);
+            partyMembers.Add(message.PartyMember);
             SelectPartyMember();
         }
-
+        
         private void SelectPartyMember()
         {
             if (!partyMembers.Any())
@@ -78,7 +70,7 @@ namespace Jrpg.Runtime.BattleSystem
                 return;
             }
 
-            OnBattleCommandsEnabled?.Invoke(true);
+            GameManager.Publish(new BattleCommandsEnabledMessage(true));
 
             if (partyMembers.Any())
             {
@@ -95,7 +87,7 @@ namespace Jrpg.Runtime.BattleSystem
 
         private void NotifyOfSelectedPartyMember(BattlePartyMember battlePartyMember)
         {
-            OnPartyMemberSelected?.Invoke(battlePartyMember);
+            GameManager.Publish(new PartyMemberSelectedMessage(battlePartyMember));
         }
 
         private void PartyIndexChanged(int direction)
@@ -120,14 +112,14 @@ namespace Jrpg.Runtime.BattleSystem
 
         private void AddListeners()
         {
-            PartyMemberStateMachine.OnPartyMemberReady += OnNewPartyMemberReady;
+            GameManager.AddListener<PartyMemberReadyForInputMessage>(OnNewPartyMemberReady);
             
             axes.action.Enable();
         }
 
         private void RemoveListeners()
         {
-            PartyMemberStateMachine.OnPartyMemberReady -= OnNewPartyMemberReady;
+            GameManager.RemoveListener<PartyMemberReadyForInputMessage>(OnNewPartyMemberReady);
             
             axes.action.Disable();
         }

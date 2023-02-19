@@ -6,7 +6,7 @@ namespace Jrpg.Runtime.BattleSystem
 {
     public class BattleStateMachine : MonoBehaviour
     {
-        [SerializeField] private IEnumerable<Turn> turnQueue;
+        //[SerializeField] private IEnumerable<Turn> turnQueue;
         
         private enum BattleState
         {

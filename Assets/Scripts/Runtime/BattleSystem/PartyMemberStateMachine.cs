@@ -1,3 +1,4 @@
+using Jrpg.Core;
 using Jrpg.Runtime.BattleSystem.UI;
 using UnityEngine;
 
@@ -21,10 +22,6 @@ namespace Jrpg.Runtime.BattleSystem
         [Header("Party Member State")]
         [SerializeField] private Status status = Status.Resting;
 
-        public delegate void PartyMemberReadyForInput(BattlePartyMember battlePartyMember);
-
-        public static event PartyMemberReadyForInput OnPartyMemberReady;
-        
         public BattleProfileController ProfileUI
         {
             get => profileUI;
@@ -57,7 +54,7 @@ namespace Jrpg.Runtime.BattleSystem
         public void RestingComplete()
         {
             status = Status.ReadyForInput;
-            OnPartyMemberReady?.Invoke(battlePartyMember);
+            GameManager.Publish(new PartyMemberReadyForInputMessage(battlePartyMember));
         }
     }
 }

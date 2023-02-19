@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
+using Jrpg.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -80,14 +81,14 @@ namespace Jrpg.Runtime.BattleSystem.UI
             
         }
 
-        private void OnPartyMemberSelected(BattlePartyMember battlePartyMember)
+        private void OnPartyMemberSelected(PartyMemberSelectedMessage message)
         {
             commandsEnabled = true;
         }
 
         private void AddListeners()
         {
-            PartyCommandController.OnPartyMemberSelected += OnPartyMemberSelected;
+            GameManager.AddListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
             
             attackButton.action.performed += OnAttackButtonPressed;
             attackButton.action.Enable();
@@ -101,7 +102,7 @@ namespace Jrpg.Runtime.BattleSystem.UI
 
         private void RemoveListeners()
         {
-            PartyCommandController.OnPartyMemberSelected -= OnPartyMemberSelected;
+            GameManager.RemoveListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
             
             attackButton.action.performed -= OnAttackButtonPressed;
             attackButton.action.Disable();

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Jrpg.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,20 +10,16 @@ namespace Jrpg.Runtime.BattleSystem.UI
         [Header("UI Elements")] [SerializeField]
         private CanvasGroup canvasGroup;
 
-        
         [Header("Buttons")]
         [SerializeField] private List<InputActionReference> faceButtons = new List<InputActionReference>();
-        
-        private bool commandsEnabled = false;
 
-        private void Awake()
-        {
-            SetCommandPanelVisibility(false);
-        }
+        private bool commandsEnabled = false;
 
         private void OnEnable()
         {
             AddListeners();
+            
+            SetCommandPanelVisibility(false);
         }
 
         private void OnDisable()
@@ -32,7 +29,10 @@ namespace Jrpg.Runtime.BattleSystem.UI
 
         private void OnFaceButtonPressed(InputAction.CallbackContext context)
         {
-            SetCommandPanelVisibility(true);
+            if (commandsEnabled && !canvasGroup.interactable)
+            {
+                SetCommandPanelVisibility(true);
+            }
         }
 
         private void SetCommandPanelVisibility(bool isVisible)
@@ -42,14 +42,14 @@ namespace Jrpg.Runtime.BattleSystem.UI
             canvasGroup.blocksRaycasts = isVisible;
         }
 
-        private void OnCommandsEnabled(bool isEnabled)
+        private void OnCommandsEnabled(BattleCommandsEnabledMessage message)
         {
-            commandsEnabled = isEnabled;
+            commandsEnabled = message.Enabled;
         }
 
         private void AddListeners()
         {
-            PartyCommandController.OnBattleCommandsEnabled += OnCommandsEnabled;
+            GameManager.AddListener<BattleCommandsEnabledMessage>(OnCommandsEnabled);
 
             foreach (var button in faceButtons)
             {
@@ -60,7 +60,7 @@ namespace Jrpg.Runtime.BattleSystem.UI
 
         private void RemoveListeners()
         {
-            PartyCommandController.OnBattleCommandsEnabled -= OnCommandsEnabled;
+            GameManager.RemoveListener<BattleCommandsEnabledMessage>(OnCommandsEnabled);
             
             foreach (var button in faceButtons)
             {

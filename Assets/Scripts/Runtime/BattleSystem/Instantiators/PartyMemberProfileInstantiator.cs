@@ -1,24 +1,41 @@
+using System;
+using Jrpg.Core;
 using UnityEngine;
 
 namespace Jrpg.Runtime.BattleSystem.Instantiators
 {
     internal sealed class PartyMemberProfileInstantiator : MonoBehaviour
     {
-        void Awake()
+        private void OnEnable()
         {
-            BattlePartyMember.OnPartyMemberAdded += OnNewPartyMemberAdded;
+            AddListeners();
         }
 
-        private void OnNewPartyMemberAdded(BattlePartyMember battlePartyMember)
+        private void OnDisable()
+        {
+            RemoveListeners();
+        }
+
+        private void OnNewPartyMemberAdded(PartyMemberAddedMessage message)
         {
             var ui = Instantiate(
-                battlePartyMember.StateMachine.ProfileUI,
+                message.PartyMember.StateMachine.ProfileUI,
                 this.transform
             );
 
-            ui.CharacterName = battlePartyMember.CharacterName;
-            ui.ProfilePicture = battlePartyMember.ProfilePicture;
-            ui.PartyMember = battlePartyMember.StateMachine;
+            ui.CharacterName = message.PartyMember.CharacterName;
+            ui.ProfilePicture = message.PartyMember.ProfilePicture;
+            ui.PartyMember = message.PartyMember.StateMachine;
+        }
+
+        private void AddListeners()
+        {
+            GameManager.AddListener<PartyMemberAddedMessage>(OnNewPartyMemberAdded);
+        }
+
+        private void RemoveListeners()
+        {
+            GameManager.RemoveListener<PartyMemberAddedMessage>(OnNewPartyMemberAdded);
         }
 
     }
