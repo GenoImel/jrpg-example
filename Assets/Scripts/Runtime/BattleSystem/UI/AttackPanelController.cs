@@ -9,21 +9,28 @@ namespace Jrpg.Runtime.BattleSystem.UI
     internal sealed class AttackPanelController : MonoBehaviour
     {
         [Header("UI")]
-        [SerializeField] private TextMeshProUGUI pageNumberText;
+        [SerializeField] 
+        private TextMeshProUGUI pageNumberText;
 
-        [SerializeField] private GameObject optionsContainer;
+        [SerializeField] 
+        private GameObject optionsContainer;
 
-        [SerializeField] private CanvasGroup canvasGroup;
+        [SerializeField] 
+        private CanvasGroup canvasGroup;
 
         [Header("Buttons")] 
-        [SerializeField] private InputActionReference attackButton;
+        [SerializeField] 
+        private InputActionReference attackButton;
 
-        [SerializeField] private List<InputActionReference> otherButtons;
+        [SerializeField] 
+        private List<InputActionReference> otherButtons;
 
         [Header("Attacks")] 
-        [SerializeField] private List<GameObject> attackOptions;
+        [SerializeField] 
+        private List<GameObject> attackOptions;
 
-        [SerializeField] private GameObject limitOption;
+        [SerializeField] 
+        private GameObject limitOption;
 
         private List<GameObject> totalOptions;
         

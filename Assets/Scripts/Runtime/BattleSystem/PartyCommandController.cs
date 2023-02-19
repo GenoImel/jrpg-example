@@ -9,12 +9,15 @@ namespace Jrpg.Runtime.BattleSystem
     internal sealed class PartyCommandController : MonoBehaviour
     {
         [Header("Controls")] 
-        [SerializeField] private InputActionReference axes;
+        [SerializeField] 
+        private InputActionReference axes;
         
-        [SerializeField] private float inputDelaySeconds = 0.25f;
+        [SerializeField] 
+        private float inputDelaySeconds = 0.25f;
 
         [Header("Party Members")]
-        [SerializeField] private List<BattlePartyMember> partyMembers = new();
+        [SerializeField] 
+        private List<BattlePartyMember> partyMembers = new();
         
         private int partyIndex = 0;
 

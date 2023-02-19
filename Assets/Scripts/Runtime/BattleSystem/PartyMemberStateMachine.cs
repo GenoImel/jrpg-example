@@ -6,9 +6,11 @@ namespace Jrpg.Runtime.BattleSystem
 {
     internal sealed class PartyMemberStateMachine : MonoBehaviour
     {
-        [SerializeField] private BattleProfileController profileUI;
+        [SerializeField] 
+        private BattleProfileController profileUI;
 
-        [SerializeField] private BattlePartyMember battlePartyMember;
+        [SerializeField] 
+        private BattlePartyMember battlePartyMember;
 
         private enum Status
         {

@@ -6,15 +6,19 @@ namespace Jrpg.Runtime.BattleSystem
     internal sealed class BattlePartyMember : MonoBehaviour
     {
         [Header("General Info")] 
-        [SerializeField] private string characterName;
+        [SerializeField] 
+        private string characterName;
 
         [Header("UI")]
-        [SerializeField] private Sprite profilePicture;
+        [SerializeField] 
+        private Sprite profilePicture;
 
-        [SerializeField] private GameObject selector;
+        [SerializeField] 
+        private GameObject selector;
 
         [Header("Scripting")] 
-        [SerializeField] private PartyMemberStateMachine stateMachine;
+        [SerializeField] 
+        private PartyMemberStateMachine stateMachine;
 
         public string CharacterName
         {

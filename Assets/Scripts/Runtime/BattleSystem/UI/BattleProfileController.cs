@@ -8,27 +8,38 @@ namespace Jrpg.Runtime.BattleSystem.UI
     internal sealed class BattleProfileController : MonoBehaviour
     {
         [Header("UI Elements")] 
-        [SerializeField] private RectTransform restBar;
+        [SerializeField] 
+        private RectTransform restBar;
 
-        [SerializeField] private RectTransform healthBar;
+        [SerializeField] 
+        private RectTransform healthBar;
 
-        [SerializeField] private RectTransform magicBar;
+        [SerializeField] 
+        private RectTransform magicBar;
 
-        [SerializeField] private RectTransform limitBar;
+        [SerializeField] 
+        private RectTransform limitBar;
 
-        [SerializeField] private Image profilePicture;
+        [SerializeField] 
+        private Image profilePicture;
 
-        [SerializeField] private TextMeshProUGUI characterName;
+        [SerializeField] 
+        private TextMeshProUGUI characterName;
 
-        [SerializeField] private float currentRestValue = 0f;
+        [SerializeField] 
+        private float currentRestValue = 0f;
 
-        [SerializeField] private float maxRestValue = 5f;
+        [SerializeField] 
+        private float maxRestValue = 5f;
 
-        [SerializeField] private float currentLimitValue = 0f;
+        [SerializeField] 
+        private float currentLimitValue = 0f;
 
-        [SerializeField] private float maxLimitValue = 5f;
+        [SerializeField] 
+        private float maxLimitValue = 5f;
 
-        [SerializeField] private PartyMemberStateMachine partyMember;
+        [SerializeField] 
+        private PartyMemberStateMachine partyMember;
 
         public string CharacterName
         {

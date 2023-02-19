@@ -7,11 +7,13 @@ namespace Jrpg.Runtime.BattleSystem.UI
 {
     internal sealed class BattleOptionsController : MonoBehaviour
     {
-        [Header("UI Elements")] [SerializeField]
+        [Header("UI Elements")] 
+        [SerializeField]
         private CanvasGroup canvasGroup;
 
         [Header("Buttons")]
-        [SerializeField] private List<InputActionReference> faceButtons = new List<InputActionReference>();
+        [SerializeField] 
+        private List<InputActionReference> faceButtons = new List<InputActionReference>();
 
         private bool commandsEnabled = false;
 

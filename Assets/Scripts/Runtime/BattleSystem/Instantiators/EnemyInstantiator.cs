@@ -7,18 +7,24 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
     internal sealed class EnemyInstantiator : MonoBehaviour
     {
         [Header("Enemies")] 
-        [SerializeField] private List<GameObject> enemyTypes;
+        [SerializeField] 
+        private List<GameObject> enemyTypes;
         
-        [SerializeField] private int enemyCount = 3;
+        [SerializeField] 
+        private int enemyCount = 3;
 
-        [SerializeField] private float popInHeight = 2f;
+        [SerializeField] 
+        private float popInHeight = 2f;
         
         [Header("Grid")] 
-        [SerializeField] private MeshFilter gridPlane;
+        [SerializeField] 
+        private MeshFilter gridPlane;
         
-        [SerializeField] [Range(1,3)] private int numRow = 2;
+        [SerializeField] [Range(1,3)] 
+        private int numRow = 2;
 
-        [SerializeField] [Range(1,4)] private int numCol = 3;
+        [SerializeField] [Range(1,4)] 
+        private int numCol = 3;
         
         private List<Vector2> gridPoints;
 

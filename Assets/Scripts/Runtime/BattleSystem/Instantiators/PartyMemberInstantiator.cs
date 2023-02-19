@@ -10,21 +10,28 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
     {
 
         [Header("Party Information")]
-        [SerializeField] private TextAsset defaultPartyInfoFile;
+        [SerializeField] 
+        private TextAsset defaultPartyInfoFile;
 
-        [SerializeField] private TextAsset partyInfoFile;
+        [SerializeField] 
+        private TextAsset partyInfoFile;
 
-        [SerializeField] private float popInHeight = 2f;
+        [SerializeField] 
+        private float popInHeight = 2f;
         
         [Header("Party Member ScriptableObjects")]
-        [SerializeField] private List<GameObject> partyMembers;
+        [SerializeField] 
+        private List<GameObject> partyMembers;
 
         [Header("Grid")] 
-        [SerializeField] private MeshFilter gridPlane;
+        [SerializeField] 
+        private MeshFilter gridPlane;
         
-        [SerializeField] private List<Vector2> frontRow;
+        [SerializeField] 
+        private List<Vector2> frontRow;
 
-        [SerializeField] private List<Vector2> backRow;
+        [SerializeField] 
+        private List<Vector2> backRow;
         
         private readonly int numRow = 2;
 
@@ -43,20 +50,20 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
             PlacePartyMembers(partyInfo);
         }
 
-        private PartyInfo LoadPartyInfo()
+        private PartyData LoadPartyInfo()
         {
-            PartyInfo currentPartyInfo = null;
+            PartyData currentPartyData = null;
 
             if (partyInfoFile != null)
             {
-                currentPartyInfo = JsonConvert.DeserializeObject<PartyInfo>(partyInfoFile.text);
+                currentPartyData = JsonConvert.DeserializeObject<PartyData>(partyInfoFile.text);
             }
             else
             {
-                currentPartyInfo = JsonConvert.DeserializeObject<PartyInfo>(defaultPartyInfoFile.text); 
+                currentPartyData = JsonConvert.DeserializeObject<PartyData>(defaultPartyInfoFile.text); 
             }
 
-            return currentPartyInfo;
+            return currentPartyData;
         }
 
         private void SeparateRows(List<Vector2> gridPoints)
@@ -74,17 +81,17 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
             }
         }
 
-        private void PlacePartyMembers(PartyInfo partyInfo)
+        private void PlacePartyMembers(PartyData partyData)
         {
-            if (partyInfo == null)
+            if (partyData == null)
             {
                 Debug.Log("Could not load party members.");
                 return;
             }
             
-            for( int i = 0; i < partyInfo.partyMembers.Count; i++)
+            for( int i = 0; i < partyData.PartyMembers.Count; i++)
             {
-                var partyMember = GetPartyMemberByName(partyInfo.partyMembers[i].name);
+                var partyMember = GetPartyMemberByName(partyData.PartyMembers[i].Name);
 
                 Instantiate(
                     partyMember,
