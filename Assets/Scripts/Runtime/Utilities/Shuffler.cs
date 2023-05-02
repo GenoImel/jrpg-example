@@ -3,44 +3,23 @@ using UnityEngine;
 
 namespace Jrpg.Runtime.Utilities
 {
-    // ReSharper disable all SwapViaDeconstruction
     internal static class Shuffler
     {
         /// <summary>
-        /// Uses the Fisher-Yates shuffle to shuffle a list of Vector3.
+        /// Uses the Fisher-Yates shuffle to shuffle a list of any type.
         /// </summary>
-        /// <param name="vectorList">List of Vector3 to be shuffled.</param>
-        /// <returns>Returns a list of Vector3.</returns>
-        public static List<Vector3> Shuffle(List<Vector3> vectorList)
+        /// <param name="list">List to be shuffled.</param>
+        /// <returns>Returns a list.</returns>
+        public static List<T> Shuffle<T>(List<T> list)
         {
-            for (int i = vectorList.Count-1; i > 0; i--)
+            for (var i = list.Count-1; i > 0; i--)
             {
-                int k = Random.Range(0,i);
+                var k = Random.Range(0, i);
 
-                var temp = vectorList[i];
-                vectorList[i] = vectorList[k];
-                vectorList[k] = temp;
+                (list[i], list[k]) = (list[k], list[i]);
             }
-            return vectorList;
-        }
-        
-        /// <summary>
-        /// Uses the Fisher-Yates shuffle to shuffle a list of Vector2.
-        /// </summary>
-        /// <param name="vectorList">List of Vector2 to be shuffled.</param>
-        /// <returns>Returns a list of Vector2.</returns>
-        public static List<Vector2> Shuffle(List<Vector2> vectorList)
-        {
-            for (int i = vectorList.Count-1; i > 0; i--)
-            {
-                int k = Random.Range(0,i);
 
-                var temp = vectorList[i];
-                vectorList[i] = vectorList[k];
-                vectorList[k] = temp;
-            }
-            return vectorList;
+            return list;
         }
-        
     }
 }
