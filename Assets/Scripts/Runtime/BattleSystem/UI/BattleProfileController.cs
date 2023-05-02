@@ -71,7 +71,7 @@ namespace Jrpg.Runtime.BattleSystem.UI
             limitBar.localScale = new Vector3(currentLimitValue, 1f, 1f);
         }
 
-        public void StartUpdateRestBar()
+        private void StartUpdateRestBar()
         {
             StartCoroutine(UpdateRestBar());
         }

@@ -19,10 +19,10 @@ namespace Jrpg.Runtime.BattleSystem
         [SerializeField] 
         private List<BattlePartyMember> partyMembers = new();
         
-        private int partyIndex = 0;
+        private int partyIndex;
 
-        private bool isMemberSelected = false;
-        private float delayCounterSeconds = 0f;
+        private bool isMemberSelected;
+        private float delayCounterSeconds;
 
         private void OnEnable()
         {

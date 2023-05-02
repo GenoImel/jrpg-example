@@ -53,7 +53,7 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
                     enemyTypes[0], 
                     gridPoints[0], 
                     Quaternion.identity, 
-                    this.transform
+                    transform
                     );
             }
             else
@@ -64,7 +64,7 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
                         enemyTypes[Random.Range(0, enemyTypes.Count)],
                         new Vector3(gridPoints[i].x, popInHeight, gridPoints[i].y),
                         Quaternion.identity, 
-                        this.transform
+                        transform
                         );
                 }
             }

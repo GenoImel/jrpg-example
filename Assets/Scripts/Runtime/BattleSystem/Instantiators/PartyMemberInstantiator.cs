@@ -32,18 +32,18 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
 
         [SerializeField] 
         private List<Vector2> backRow;
-        
-        private readonly int numRow = 2;
 
-        private readonly int numCol = 4;
-        
-        void Start()
+        private const int NumRow = 2;
+
+        private const int NumCol = 4;
+
+        private void Start()
         {
             var partyInfo = LoadPartyInfo();
             
             var plane = GridGenerator.DefineXZPlane(gridPlane);
             
-            var gridPoints = GridGenerator.Create2DGrid(plane, numRow, numCol);
+            var gridPoints = GridGenerator.Create2DGrid(plane, NumRow, NumCol);
             
             SeparateRows(gridPoints);
             
@@ -52,25 +52,18 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
 
         private PartyData LoadPartyInfo()
         {
-            PartyData currentPartyData = null;
-
-            if (partyInfoFile != null)
-            {
-                currentPartyData = JsonConvert.DeserializeObject<PartyData>(partyInfoFile.text);
-            }
-            else
-            {
-                currentPartyData = JsonConvert.DeserializeObject<PartyData>(defaultPartyInfoFile.text); 
-            }
+            var currentPartyData = JsonConvert
+                .DeserializeObject<PartyData>(partyInfoFile != null ? 
+                    partyInfoFile.text : defaultPartyInfoFile.text);
 
             return currentPartyData;
         }
 
         private void SeparateRows(List<Vector2> gridPoints)
         {
-            for (int i = 0; i < gridPoints.Count; i++)
+            for (var i = 0; i < gridPoints.Count; i++)
             {
-                if (i < numCol)
+                if (i < NumCol)
                 {
                     frontRow.Add(gridPoints[i]);
                 }

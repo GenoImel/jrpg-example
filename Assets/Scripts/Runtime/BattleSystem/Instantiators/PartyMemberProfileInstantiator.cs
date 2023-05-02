@@ -20,7 +20,7 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
         {
             var ui = Instantiate(
                 message.PartyMember.StateMachine.ProfileUI,
-                this.transform
+                transform
             );
 
             ui.CharacterName = message.PartyMember.CharacterName;

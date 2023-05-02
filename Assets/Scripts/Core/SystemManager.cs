@@ -22,13 +22,13 @@ namespace Jrpg.Core
 
         public TSystem GetSystem<TSystem>()
         {
-            var SystemType = typeof(TSystem);
-            if (systems.TryGetValue(SystemType, out var system))
+            var systemType = typeof(TSystem);
+            if (systems.TryGetValue(systemType, out var system))
             {
                 return (TSystem)system;
             }
 
-            throw new Exception($"System {SystemType} does not exist");
+            throw new Exception($"System {systemType} does not exist");
         }
     }
 }

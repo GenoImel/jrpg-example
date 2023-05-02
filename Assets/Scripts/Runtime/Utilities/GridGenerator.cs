@@ -1,23 +1,21 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Jrpg.Runtime.Utilities
 {
     internal static class GridGenerator
     {
-
         /// <summary>
         /// Uses a predefined <paramref name="plane2D"/> to generate a 2D grid
         /// with <paramref name="numRow"/> rows and <paramref name="numCol"/> columns.
         /// </summary>
         public static List<Vector2> Create2DGrid(Plane2D plane2D, int numRow, int numCol)
         {
-            var gridPoints = new List<Vector2>();
-            
             if (numRow == 0 || numCol == 0)
             {
-                Debug.Log("The number of rows or columns in the grid cannot be zero.");
-                return gridPoints;
+                throw new Exception($"The number of rows or columns in the grid cannot be zero.");
             }
 
             var pointsAlongX = GeneratePoints(
@@ -31,7 +29,7 @@ namespace Jrpg.Runtime.Utilities
                 numCol
                 );
 
-            gridPoints = Generate2DGrid(pointsAlongX, pointsAlongY);
+            var gridPoints = Generate2DGrid(pointsAlongX, pointsAlongY);
             return gridPoints;
         }
 
@@ -84,7 +82,7 @@ namespace Jrpg.Runtime.Utilities
         /// Generates <paramref name="numPoints"/> across a line starting at <paramref name="startPoint"/>
         /// and ending at <param name="endPoint"></param>.
         /// </summary>
-        private static List<Vector2> GeneratePoints(Vector3 startPoint, Vector3 endPoint, int numPoints)
+        private static IEnumerable<Vector2> GeneratePoints(Vector3 startPoint, Vector3 endPoint, int numPoints)
         {
             var result = new List<Vector2>();
 
@@ -94,8 +92,8 @@ namespace Jrpg.Runtime.Utilities
                 return result;
             }
 
-            float frac = 1f / numPoints;
-            float point = 0f;
+            var frac = 1f / numPoints;
+            var point = 0f;
 
             if (numPoints == 1)
             {
@@ -103,7 +101,7 @@ namespace Jrpg.Runtime.Utilities
                 return result;
             }
             
-            for (int i = 0; i < numPoints; i++)
+            for (var i = 0; i < numPoints; i++)
             {
                 if (i == 0)
                 {
@@ -125,28 +123,16 @@ namespace Jrpg.Runtime.Utilities
         /// <param name="pointsAlongM">Number of points along the M dimension.</param>
         /// <param name="pointsAlongN">Number of points along the N dimension</param>
         /// <returns></returns>
-        private static List<Vector2> Generate2DGrid(List<Vector2> pointsAlongM, List<Vector2> pointsAlongN)
+        private static List<Vector2> Generate2DGrid(IEnumerable<Vector2> pointsAlongM, IEnumerable<Vector2> pointsAlongN)
         {
-            List<Vector2> gridPoints = new List<Vector2>();
-            
-            foreach(Vector2 pointM in pointsAlongM)
-            {
-                foreach (Vector2 pointN in pointsAlongN)
-                {
-                    gridPoints.Add(new Vector2(
-                        pointM.x,
-                        pointN.y
-                    ));
-                }
-            }
-
-            return gridPoints;
+            return (from pointM in pointsAlongM from pointN in pointsAlongN 
+                select new Vector2(pointM.x, pointN.y)).ToList();
         }
 
         internal readonly struct Plane2D
         {
-            public readonly Vector2 MinBounds { get; }
-            public readonly Vector2 MaxBounds { get; }
+            public Vector2 MinBounds { get; }
+            public Vector2 MaxBounds { get; }
 
             public Plane2D(Vector2 minBounds, Vector2 maxBounds)
             {
