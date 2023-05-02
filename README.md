@@ -11,4 +11,4 @@ An example project that is heavily inspired by mechanics from early Square Enix 
 ## Credits:
 
 - Special thanks to [Edvinas01](https://github.com/Edvinas01) for core architecture.
-- Editor based aspect ratio enforcement was added thanks to [huchi57/AspectRationEnforcer](https://github.com/huchi57/AspectRatioEnforcer).
+- Editor-based aspect ratio enforcement was added thanks to [huchi57/AspectRationEnforcer](https://github.com/huchi57/AspectRatioEnforcer).
