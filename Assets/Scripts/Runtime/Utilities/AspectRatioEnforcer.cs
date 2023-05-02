@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// ReSharper disable InconsistentNaming
 namespace Jrpg.Runtime.Utilities
 {
     /// <summary>
@@ -13,26 +14,26 @@ namespace Jrpg.Runtime.Utilities
     {
         private class DisplayMask
         {
-            private Rect _mask1 = new Rect();
-            private Rect _mask2 = new Rect();
-            private Rect _viewport = new Rect();
+            private Rect _mask1;
+            private Rect _mask2;
+            private Rect _viewport;
 
             public Rect Mask1 => _mask1;
             public Rect Mask2 => _mask2;
             public Rect Viewport => _viewport;
 
-            public void SetLetterbox(float viewportHeight, float maskHeight, float viewportIncet)
+            public void SetLetterbox(float viewportHeight, float maskHeight, float viewportInset)
             {
                 _mask1.Set(0, 0, Screen.width, maskHeight);
                 _mask2.Set(0, maskHeight + viewportHeight, Screen.width, maskHeight);
-                _viewport.Set(0, viewportIncet / 2, 1, 1 - viewportIncet);
+                _viewport.Set(0, viewportInset / 2, 1, 1 - viewportInset);
             }
 
-            public void SetPillarbox(float viewportWidth, float maskWidth, float viewportIncet)
+            public void SetPillarBox(float viewportWidth, float maskWidth, float viewportInset)
             {
                 _mask1.Set(0, 0, maskWidth, Screen.height);
                 _mask2.Set(maskWidth + viewportWidth, 0, maskWidth, Screen.height);
-                _viewport.Set(viewportIncet / 2, 0, 1 - viewportIncet, 1);
+                _viewport.Set(viewportInset / 2, 0, 1 - viewportInset, 1);
             }
 
             public void ClearBox()
@@ -47,11 +48,11 @@ namespace Jrpg.Runtime.Utilities
         [SerializeField] private Color _maskColor = Color.black;
         [SerializeField, Min(0)] private float _aspectRatio = 16f / 9f;
 
-        private static Texture2D _maskTexture = null;
-        private static GUIStyle _style = null;
-        private static Color _cacheMaskColor = default;
-        private Camera _camera = null;
-        private DisplayMask _mask = null;
+        private static Texture2D _maskTexture;
+        private static GUIStyle _style;
+        private static Color _cacheMaskColor;
+        private Camera _camera;
+        private DisplayMask _mask;
 
         public bool PreviewInEditMode
         {
@@ -139,7 +140,7 @@ namespace Jrpg.Runtime.Utilities
                 {
                     float viewportWidth = Screen.height * _aspectRatio;
                     float maskWidth = (Screen.width - viewportWidth) / 2;
-                    Mask.SetPillarbox(viewportWidth, maskWidth, ViewportInset);
+                    Mask.SetPillarBox(viewportWidth, maskWidth, ViewportInset);
                 }
 
                 else

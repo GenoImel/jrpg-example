@@ -11,18 +11,20 @@ namespace Jrpg.Runtime.BattleSystem.Instantiators
 
         private void Start()
         {
-            if (sceneTerrain != null)
+            if (sceneTerrain == null)
             {
-                defaultTerrain.SetActive(false);
-                CreateTerrain(sceneTerrain);
-            }
+                return;
+            } 
+            
+            defaultTerrain.SetActive(false);
+            CreateTerrain(sceneTerrain);
         }
 
         private void CreateTerrain(GameObject terrain)
         {
             Instantiate(
                 terrain,
-                this.transform
+                transform
             );
         }
     }

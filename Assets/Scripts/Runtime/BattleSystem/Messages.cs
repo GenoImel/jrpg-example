@@ -1,6 +1,4 @@
-using System;
 using Jrpg.Core;
-using UnityEngine;
 
 namespace Jrpg.Runtime.BattleSystem
 {

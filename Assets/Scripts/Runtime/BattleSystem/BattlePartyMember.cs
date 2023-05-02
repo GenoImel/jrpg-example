@@ -20,20 +20,11 @@ namespace Jrpg.Runtime.BattleSystem
         [SerializeField] 
         private PartyMemberStateMachine stateMachine;
 
-        public string CharacterName
-        {
-            get => characterName;
-        }
+        public string CharacterName => characterName;
 
-        public Sprite ProfilePicture
-        {
-            get => profilePicture;
-        }
+        public Sprite ProfilePicture => profilePicture;
 
-        public PartyMemberStateMachine StateMachine
-        {
-            get => stateMachine;
-        }
+        public PartyMemberStateMachine StateMachine => stateMachine;
 
         private void OnEnable()
         {
@@ -45,7 +36,7 @@ namespace Jrpg.Runtime.BattleSystem
             RemoveListeners();
         }
 
-        void Start()
+        private void Start()
         {
             GameManager.Publish(new PartyMemberAddedMessage(this));
         }

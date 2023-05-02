@@ -2,6 +2,7 @@ using Jrpg.Runtime.Utilities;
 using UnityEditor;
 using UnityEngine;
 
+// ReSharper disable InconsistentNaming
 namespace Jrpg.Editor
 {
     /// <summary>
@@ -17,7 +18,7 @@ namespace Jrpg.Editor
         private const float _4to3 = 4f / 3f;
         private const float _5to4 = 5f / 4f;
 
-        private SerializedProperty _aspectRatio = default;
+        private SerializedProperty _aspectRatio;
 
         private SerializedProperty AspectRatio
         {

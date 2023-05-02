@@ -13,7 +13,7 @@ namespace Jrpg.Runtime.BattleSystem.UI
 
         [Header("Buttons")]
         [SerializeField] 
-        private List<InputActionReference> faceButtons = new List<InputActionReference>();
+        private List<InputActionReference> faceButtons;
 
         private bool commandsEnabled = false;
 
