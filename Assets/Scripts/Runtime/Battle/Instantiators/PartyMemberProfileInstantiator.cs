@@ -1,8 +1,7 @@
-using System;
 using Jrpg.Core;
 using UnityEngine;
 
-namespace Jrpg.Runtime.BattleSystem.Instantiators
+namespace Jrpg.Runtime.Battle.Instantiators
 {
     internal sealed class PartyMemberProfileInstantiator : MonoBehaviour
     {

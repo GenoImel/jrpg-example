@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Jrpg.Runtime.BattleSystem.UI
+namespace Jrpg.Runtime.Battle.UI
 {
     internal sealed class BattleProfileController : MonoBehaviour
     {

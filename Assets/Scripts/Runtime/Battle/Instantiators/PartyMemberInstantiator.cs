@@ -4,7 +4,7 @@ using Jrpg.Runtime.Utilities;
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace Jrpg.Runtime.BattleSystem.Instantiators
+namespace Jrpg.Runtime.Battle.Instantiators
 {
     internal sealed class PartyMemberInstantiator : MonoBehaviour
     {

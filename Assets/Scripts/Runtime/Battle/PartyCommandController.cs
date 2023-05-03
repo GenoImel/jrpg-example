@@ -4,7 +4,7 @@ using Jrpg.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Jrpg.Runtime.BattleSystem
+namespace Jrpg.Runtime.Battle
 {
     internal sealed class PartyCommandController : MonoBehaviour
     {

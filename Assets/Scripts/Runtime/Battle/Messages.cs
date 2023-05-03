@@ -1,6 +1,6 @@
 using Jrpg.Core;
 
-namespace Jrpg.Runtime.BattleSystem
+namespace Jrpg.Runtime.Battle
 {
     internal sealed class PartyMemberAddedMessage : IMessage
     {

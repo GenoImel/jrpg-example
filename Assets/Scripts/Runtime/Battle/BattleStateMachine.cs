@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-using Jrpg.Runtime.BattleSystem;
 using UnityEngine;
 
-namespace Jrpg.Runtime.BattleSystem
+namespace Jrpg.Runtime.Battle
 {
     public class BattleStateMachine : MonoBehaviour
     {

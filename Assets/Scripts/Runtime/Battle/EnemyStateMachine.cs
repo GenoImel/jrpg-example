@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Jrpg.Runtime.BattleSystem
+namespace Jrpg.Runtime.Battle
 {
     public class EnemyStateMachine : MonoBehaviour
     {

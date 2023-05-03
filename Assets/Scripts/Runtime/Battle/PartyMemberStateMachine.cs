@@ -1,8 +1,8 @@
 using Jrpg.Core;
-using Jrpg.Runtime.BattleSystem.UI;
+using Jrpg.Runtime.Battle.UI;
 using UnityEngine;
 
-namespace Jrpg.Runtime.BattleSystem
+namespace Jrpg.Runtime.Battle
 {
     internal sealed class PartyMemberStateMachine : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Jrpg.Runtime.Utilities;
 using UnityEngine;
 
-namespace Jrpg.Runtime.BattleSystem.Instantiators
+namespace Jrpg.Runtime.Battle.Instantiators
 {
     internal sealed class EnemyInstantiator : MonoBehaviour
     {

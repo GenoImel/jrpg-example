@@ -1,7 +1,7 @@
 using Jrpg.Core;
 using UnityEngine;
 
-namespace Jrpg.Runtime.BattleSystem
+namespace Jrpg.Runtime.Battle
 {
     internal sealed class BattlePartyMember : MonoBehaviour
     {

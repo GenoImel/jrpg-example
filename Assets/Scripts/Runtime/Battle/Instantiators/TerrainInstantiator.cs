@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Jrpg.Runtime.BattleSystem.Instantiators
+namespace Jrpg.Runtime.Battle.Instantiators
 {
     internal sealed class TerrainInstantiator : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using Jrpg.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Jrpg.Runtime.BattleSystem.UI
+namespace Jrpg.Runtime.Battle.UI
 {
     internal sealed class BattleOptionsController : MonoBehaviour
     {
