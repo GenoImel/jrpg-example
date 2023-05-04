@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Jrpg.Runtime.DataClasses.SaveData
+namespace Jrpg.Runtime.DataClasses.PartyData
 {
     /// <summary>
     /// An equipped weapon and it's gem slots.

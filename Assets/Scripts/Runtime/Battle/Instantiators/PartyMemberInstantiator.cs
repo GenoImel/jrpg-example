@@ -1,27 +1,20 @@
+using Jrpg.Core;
 using System.Collections.Generic;
-using Jrpg.Runtime.DataClasses.SaveData;
+using Jrpg.Runtime.Systems.GameData;
 using Jrpg.Runtime.Utilities;
-using Newtonsoft.Json;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Jrpg.Runtime.Battle.Instantiators
 {
     internal sealed class PartyMemberInstantiator : MonoBehaviour
     {
-
-        [Header("Party Information")]
-        [SerializeField] 
-        private TextAsset defaultPartyInfoFile;
-
-        [SerializeField] 
-        private TextAsset partyInfoFile;
-
         [SerializeField] 
         private float popInHeight = 2f;
         
-        [Header("Party Member ScriptableObjects")]
+        [Header("Party Members")]
         [SerializeField] 
-        private List<GameObject> partyMembers;
+        private List<BattlePartyMember> partyMembers;
 
         [Header("Grid")] 
         [SerializeField] 
@@ -37,26 +30,22 @@ namespace Jrpg.Runtime.Battle.Instantiators
 
         private const int NumCol = 4;
 
+        private ISaveDataSystem saveDataSystem;
+
+        private void Awake()
+        {
+            saveDataSystem = GameManager.GetSystem<ISaveDataSystem>();
+        }
+        
         private void Start()
         {
-            var partyInfo = LoadPartyInfo();
-            
             var plane = GridGenerator.DefineXZPlane(gridPlane);
             
             var gridPoints = GridGenerator.Create2DGrid(plane, NumRow, NumCol);
             
             SeparateRows(gridPoints);
             
-            PlacePartyMembers(partyInfo);
-        }
-
-        private PartyData LoadPartyInfo()
-        {
-            var currentPartyData = JsonConvert
-                .DeserializeObject<PartyData>(partyInfoFile != null ? 
-                    partyInfoFile.text : defaultPartyInfoFile.text);
-
-            return currentPartyData;
+            PlacePartyMembers();
         }
 
         private void SeparateRows(List<Vector2> gridPoints)
@@ -74,28 +63,31 @@ namespace Jrpg.Runtime.Battle.Instantiators
             }
         }
 
-        private void PlacePartyMembers(PartyData partyData)
+        private void PlacePartyMembers()
         {
-            if (partyData == null)
-            {
-                Debug.Log("Could not load party members.");
-                return;
-            }
+            var partyData = saveDataSystem.GetPartyData();
             
-            for( int i = 0; i < partyData.PartyMembers.Count; i++)
+            for (var i = 0; i < partyData.PartyMembers.Count; i++)
             {
                 var partyMember = GetPartyMemberByName(partyData.PartyMembers[i].Name);
 
-                Instantiate(
+                if (partyMember == null)
+                {
+                    return;
+                }
+
+                var partyMemberGameObject = Instantiate(
                     partyMember,
                     new Vector3(frontRow[i].x, popInHeight, frontRow[i].y),
                     Quaternion.identity,
-                    this.transform
+                    transform
                 );
+                
+                partyMemberGameObject.SetData(partyData.PartyMembers[i]);
             }
         }
 
-        private GameObject GetPartyMemberByName(string charName)
+        private BattlePartyMember GetPartyMemberByName(string charName)
         {
             foreach(var member in partyMembers)
             {

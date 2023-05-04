@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0be422183752e44831fc8aaf9c4a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: 000
   profilePicture: {fileID: 21300000, guid: c747078a3be6a5c44acb1f6fc28a5ea4, type: 3}
   selector: {fileID: 372849255509365492}
   stateMachine: {fileID: 803345255096972872}

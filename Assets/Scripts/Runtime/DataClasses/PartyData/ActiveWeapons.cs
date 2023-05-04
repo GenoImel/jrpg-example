@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace Jrpg.Runtime.DataClasses.SaveData
+namespace Jrpg.Runtime.DataClasses.PartyData
 {
     /// <summary>
     /// Currently equipped weapons.

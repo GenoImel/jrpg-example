@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Jrpg.Runtime.DataClasses.SaveData
+namespace Jrpg.Runtime.DataClasses.PartyData
 {
     /// <summary>
     /// An active party member, their stats, and their equipment.

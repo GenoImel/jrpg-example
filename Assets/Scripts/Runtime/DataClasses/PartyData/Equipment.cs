@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Jrpg.Runtime.DataClasses.SaveData
+namespace Jrpg.Runtime.DataClasses.PartyData
 {
     /// <summary>
     /// A party member's equipment.
