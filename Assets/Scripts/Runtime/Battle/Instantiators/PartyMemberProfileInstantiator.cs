@@ -22,7 +22,7 @@ namespace Jrpg.Runtime.Battle.Instantiators
                 transform
             );
 
-            ui.CharacterName = message.PartyMember.GetCharacterName();
+            ui.CharacterName = message.PartyMember.CharacterName;
             ui.ProfilePicture = message.PartyMember.ProfilePicture;
             ui.PartyMember = message.PartyMember.StateMachine;
         }

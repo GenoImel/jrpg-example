@@ -1,0 +1,32 @@
+{
+  "overdrives": [
+    {
+      "overdriveName" : "XR57",
+      "description" : "Strike faster than the speed of light.",
+      "partyMember" : "PartyMember000",
+      "levelAcquired" : "7",
+      "overdriveAttack" : "150"
+    },
+    {
+      "overdriveName" : "Trance",
+      "description" : "Go into a trance and do more damage.",
+      "partyMember" : "PartyMember001",
+      "levelAcquired" : "10",
+      "overdriveAttack" : "200",
+    },
+    {
+      "overdriveName" : "Rage",
+      "description" : "Rage and do more damage.",
+      "partyMember" : "PartyMember002",
+      "levelAcquired" : "15",
+      "overdriveAttack" : "250"
+    },
+    {
+      "overdriveName" : "Berserk",
+      "description" : "Enter into a berserker state and do more damage.",
+      "partyMember" : "PartyMember003",
+      "levelAcquired" : "20",
+      "overdriveAttack" : "300"
+    }
+  ]
+}

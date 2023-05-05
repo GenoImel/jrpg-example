@@ -12,13 +12,6 @@ namespace Jrpg.Runtime.Systems.GameData
         public PartyData LoadPartyData(TextAsset data);
 
         /// <summary>
-        /// Loads the specified inventory <paramref name="data"/> file.
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        public PartyInventory LoadInventoryData(TextAsset data);
-        
-        /// <summary>
         /// Save the current data.
         /// </summary>
         public void SaveData();

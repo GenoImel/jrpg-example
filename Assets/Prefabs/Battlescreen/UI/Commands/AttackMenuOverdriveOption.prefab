@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4977368336197506967}
   - component: {fileID: 8968677274234127159}
   m_Layer: 5
-  m_Name: LimitText
+  m_Name: OverdriveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Limit
+  m_text: Activate Overdrive!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 7721199728243739395}
   - component: {fileID: 7434231309157987257}
   m_Layer: 5
-  m_Name: LimitSprite
+  m_Name: OverdriveSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,8 +222,9 @@ GameObject:
   - component: {fileID: 790597656574374862}
   - component: {fileID: 2579736652109538072}
   - component: {fileID: 6559168708406135531}
+  - component: {fileID: -1313844770527419125}
   m_Layer: 5
-  m_Name: AttackMenuLimitOption
+  m_Name: AttackMenuOverdriveOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,3 +290,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-1313844770527419125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517304969578751799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175b1e0be4c1447bacb97763311ab6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 7434231309157987257}
+  nameText: {fileID: 8968677274234127159}
+  backgroundImage: {fileID: 6559168708406135531}
+  normalColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 0.5254902}
+  highlightColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 0.5254902}

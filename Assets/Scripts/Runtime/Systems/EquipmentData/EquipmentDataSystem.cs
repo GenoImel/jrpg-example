@@ -1,3 +1,4 @@
+using Jrpg.Runtime.DataClasses.EquipmentData;
 using Jrpg.Runtime.DataClasses.ItemData;
 using Newtonsoft.Json;
 using UnityEngine;

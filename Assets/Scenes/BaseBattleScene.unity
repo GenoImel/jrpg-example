@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axes: {fileID: 2915082374998652967, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
   inputDelaySeconds: 0.25
+  readyPartyMembers: []
   partyMembers: []
 --- !u!4 &517441268
 Transform:

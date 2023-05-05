@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace Jrpg.Runtime.DataClasses.ItemData
+namespace Jrpg.Runtime.DataClasses.EquipmentData
 {
     /// <summary>
     /// Database of all gems in game.

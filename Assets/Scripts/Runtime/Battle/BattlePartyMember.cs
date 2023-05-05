@@ -6,34 +6,31 @@ using UnityEngine;
 
 namespace Jrpg.Runtime.Battle
 {
-    internal sealed class BattlePartyMember : MonoBehaviour
+    internal sealed class BattlePartyMember : BaseBattleEntity
     {
         [Header("UI")]
         [SerializeField] 
         private Sprite profilePicture;
 
-        [SerializeField] 
-        private GameObject selector;
-
         [Header("Scripting")] 
         [SerializeField] 
         private PartyMemberStateMachine stateMachine;
         
-        private PartyMember MemberData { get; set; }
+        private new PartyMember EntityData { get ; set; }
+
+        public PartyMember GetEntityData()
+        {
+            return EntityData;
+        }
 
         private ISaveDataSystem saveDataSystem;
 
         public void SetData(PartyMember memberData)
         {
-            MemberData = memberData;
+            EntityData = memberData;
         }
 
-        public string GetCharacterName()
-        {
-            return MemberData.Name;
-        }
-
-        public string CharacterName => MemberData.Name;
+        public string CharacterName => EntityData.Name;
 
         public Sprite ProfilePicture => profilePicture;
 
@@ -62,11 +59,6 @@ namespace Jrpg.Runtime.Battle
         private void OnPartyMemberSelected(PartyMemberSelectedMessage message)
         {
             SetSelected(message.PartyMember == this);
-        }
-
-        private void SetSelected(bool isSelected)
-        {
-            selector.SetActive(isSelected);
         }
 
         private void AddListeners()

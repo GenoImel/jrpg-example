@@ -1,3 +1,4 @@
+using Jrpg.Runtime.DataClasses.Bases;
 using Newtonsoft.Json;
 
 namespace Jrpg.Runtime.DataClasses.PartyData
@@ -5,38 +6,8 @@ namespace Jrpg.Runtime.DataClasses.PartyData
     /// <summary>
     /// An active party member, their stats, and their equipment.
     /// </summary>
-    internal sealed class PartyMember
+    internal sealed class PartyMember : BaseEntity
     {
-        [JsonProperty("name")]
-        public string Name { get; }
-
-        [JsonProperty("level")]
-        public int Level { get; }
-
-        [JsonProperty("health")]
-        public int Health { get; }
-
-        [JsonProperty("maxHealth")]
-        public int MaxHealth { get; }
-
-        [JsonProperty("magic")]
-        public int Magic { get; }
-
-        [JsonProperty("maxMagic")]
-        public int MaxMagic { get; }
-
-        [JsonProperty("basePhysicalAttack")]
-        public int BasePhysicalAttack { get; }
-
-        [JsonProperty("baseMagicAttack")]
-        public int BaseMagicAttack { get; }
-
-        [JsonProperty("baseDefense")]
-        public int BaseDefense { get; }
-
-        [JsonProperty("baseSpeed")]
-        public int BaseSpeed { get; }
-
         [JsonProperty("positionOnField")]
         public string PositionOnField { get; }
 
