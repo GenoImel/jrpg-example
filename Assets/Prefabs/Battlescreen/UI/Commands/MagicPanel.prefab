@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4170392721842493988}
   - component: {fileID: 4308050075614435397}
   - component: {fileID: 3611947588372340913}
+  - component: {fileID: 3515268453445938366}
   m_Layer: 5
   m_Name: MagicPanel
   m_TagString: Untagged
@@ -60,6 +61,30 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &3515268453445938366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174696681332865720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5041d93632ef461ca802387b8a58bdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageNumberText: {fileID: 8374011512357220699}
+  optionsContainer: {fileID: 6986135688913049687}
+  canvasGroup: {fileID: 3611947588372340913}
+  optionPrefab: {fileID: 5887640623992391518, guid: e7cfeb9a0b358b54c8235c5a16aa676c, type: 3}
+  optionFaceButton: {fileID: 4557948942953932904, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  incrementOptionIndexButton: {fileID: 2228769679593563241, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  decrementOptionIndexButton: {fileID: 401235817350929183, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  otherFaceButtons:
+  - {fileID: -4256021037253564534, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  - {fileID: 256541589240922355, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  - {fileID: -404835749428702899, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  listOptions: []
 --- !u!1001 &390309596541218594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,6 +185,11 @@ PrefabInstance:
 --- !u!224 &4850564777911993298 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5060359836147166448, guid: 34df7f873fb37ba47bf4fef52a29f114, type: 3}
+  m_PrefabInstance: {fileID: 390309596541218594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6986135688913049687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7320906753499248501, guid: 34df7f873fb37ba47bf4fef52a29f114, type: 3}
   m_PrefabInstance: {fileID: 390309596541218594}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5864353648601664147
@@ -264,3 +294,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2689820544312789671, guid: 226fa97c1d621eb42a809fb6595ce974, type: 3}
   m_PrefabInstance: {fileID: 5864353648601664147}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8374011512357220699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2689820545788050376, guid: 226fa97c1d621eb42a809fb6595ce974, type: 3}
+  m_PrefabInstance: {fileID: 5864353648601664147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

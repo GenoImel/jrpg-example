@@ -1,7 +1,7 @@
 {
   "items" : [
     {
-      "itemName" : "Lite Potion",
+      "name" : "Lite Potion",
       "description" : "Light and fruity.",
       "itemMode" : "Health",
       "itemAmount" : "25",
@@ -9,7 +9,7 @@
       "itemStatusEffectChance" : 0
     },
     {
-      "itemName" : "Lite Ether",
+      "name" : "Lite Ether",
       "description" : "It tastes like cough medicine...",
       "itemMode" : "SP",
       "itemAmount" : "15",

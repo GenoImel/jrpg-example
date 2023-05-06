@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Jrpg.Runtime.DataClasses.Bases;
 using Newtonsoft.Json;
 
 namespace Jrpg.Runtime.DataClasses.EquipmentData
@@ -21,7 +22,7 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
 
         public Weapon GetWeapon(string weaponName)
         {
-            foreach (var t in WeaponsDatabase.Where(t => t.WeaponName == weaponName))
+            foreach (var t in WeaponsDatabase.Where(t => t.Name == weaponName))
             {
                 return t;
             }
@@ -33,11 +34,8 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
     /// <summary>
     /// An individual weapon in the weapons database.
     /// </summary>
-    internal sealed class Weapon
+    internal sealed class Weapon : BaseEquipment
     {
-        [JsonProperty("weaponName")]
-        public string WeaponName { get; }
-        
         [JsonProperty("weaponType")]
         public string WeaponType { get; }
         
@@ -67,7 +65,7 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
             
         )
         {
-            WeaponName = weaponName;
+            Name = weaponName;
             WeaponType = weaponType;
             WeaponStance = weaponStance;
             WeaponAttack = weaponAttack;

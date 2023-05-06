@@ -1,7 +1,8 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using Jrpg.Core;
 using Jrpg.Runtime.DataClasses.PartyData;
+using Jrpg.Runtime.Systems.EquipmentData;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,7 +22,7 @@ namespace Jrpg.Runtime.Battle.UI
         protected CanvasGroup canvasGroup;
 
         [SerializeField] 
-        protected AttackOption optionPrefab;
+        protected Option optionPrefab;
         
         [Header("Buttons")] 
         [SerializeField] 
@@ -43,6 +44,8 @@ namespace Jrpg.Runtime.Battle.UI
         protected List<GameObject> totalOptions;
         
         protected PartyMember partyMember;
+        
+        private IEquipmentDataSystem equipmentDataSystem;
 
         private int pageIndex = 0;
         private int optionIndex = 0;
@@ -51,6 +54,8 @@ namespace Jrpg.Runtime.Battle.UI
         protected virtual void Awake()
         {
             SetPanelActive(false);
+            
+            equipmentDataSystem = GameManager.GetSystem<IEquipmentDataSystem>();
         }
 
         protected virtual void OnEnable()
@@ -139,25 +144,46 @@ namespace Jrpg.Runtime.Battle.UI
 
         private void HighlightCurrentOption()
         {
-            foreach (var attack in listOptions)
+            if (!listOptions.Any())
             {
-                attack.SetSelected(false);
+                return;
+            }
+            
+            foreach (var option in listOptions)
+            {
+                option.SetSelected(false);
             }
             
             listOptions[optionIndex].SetSelected(true);
         }
 
-        protected void OnPartyMemberSelected(PartyMemberSelectedMessage message)
+        private void OnPartyMemberSelected(PartyMemberSelectedMessage message)
         {
             partyMember = message.PartyMember.GetEntityData();
             commandsEnabled = true;
             ResetPanel();
-            InitializePanelOptions();
+            InitializePanel();
             HighlightCurrentOption();
         }
 
-        protected virtual void InitializePanelOptions()
+        protected virtual void InitializePanel()
         {
+        }
+
+        protected void InitializePanelOptions<T>(IEnumerable<string> tempListOptions)
+        {
+            foreach (var tempOption in tempListOptions)
+            {
+                if(string.IsNullOrWhiteSpace(tempOption) || string.IsNullOrEmpty(tempOption))
+                {
+                    continue;
+                }
+
+                var optionData = equipmentDataSystem.GetEquipmentDataByName<T>(tempOption);
+                var option = Instantiate(optionPrefab, optionsContainer.transform);
+                    option.InitializeOption(optionData.Name, optionData);
+                    listOptions.Add(option);
+            }
         }
 
         protected virtual void AddListeners()

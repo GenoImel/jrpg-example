@@ -2,70 +2,70 @@
     "gems": [
       
       {
-        "gemName": "Stab",
+        "name": "Stab",
         "gemType": "Sword",
         "gemAttack": 15,
         "gemStatusEffect": "",
         "gemStatusEffectChance": 0
       },
       {
-        "gemName": "Slash",
+        "name": "Slash",
         "gemType": "Sword",
         "gemAttack": 20,
         "gemStatusEffect": "",
         "gemStatusEffectChance": 0
       },
       {
-        "gemName": "Scattershot",
+        "name": "Scattershot",
         "gemType": "Gun",
         "gemAttack": 15,
         "gemStatusEffect": "",
         "gemStatusEffectChance": 0
       },
       {
-        "gemName": "Blindside",
+        "name": "Blindside",
         "gemType": "Gun",
         "gemAttack": 23,
         "gemStatusEffect": "Blurred Vision",
         "gemStatusEffectChance": 0.75
       },
       {
-        "gemName": "Sleepy Time",
+        "name": "Sleepy Time",
         "gemType": "Misc",
         "gemAttack": 2,
         "gemStatusEffect": "Sleep",
         "gemStatusEffectChance": 0.75
       },
       {
-        "gemName": "Poison Slap",
+        "name": "Poison Slap",
         "gemType": "Misc",
         "gemAttack": 5,
         "gemStatusEffect": "Poison",
         "gemStatusEffectChance": 0.75
       },
       {
-        "gemName": "Bolt",
+        "name": "Bolt",
         "gemType": "Wand",
         "gemAttack": 10,
         "gemStatusEffect": "Stunned",
         "gemStatusEffectChance": 0.10
       },
       {
-        "gemName": "Ember",
+        "name": "Ember",
         "gemType": "Wand",
         "gemAttack": 12,
         "gemStatusEffect": " ",
         "gemStatusEffectChance": 0.0
       },
       {
-        "gemName": "Fire Rain",
+        "name": "Fire Rain",
         "gemType": "Bow",
         "gemAttack": 15,
         "gemStatusEffect": " ",
         "gemStatusEffectChance": 0.0
       },
       {
-        "gemName": "Ice Rain",
+        "name": "Ice Rain",
         "gemType": "Bow",
         "gemAttack": 12,
         "gemStatusEffect": " ",

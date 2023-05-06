@@ -2,7 +2,7 @@
   "weapons": [
     
     {
-      "weaponName": "Rusty Swashbuckler",
+      "name": "Rusty Swashbuckler",
       "weaponType": "Sword",
       "weaponStance": "one-hand",
       "weaponAttack": 15,
@@ -11,7 +11,7 @@
       "weaponGemSlots": 2
     },
     {
-      "weaponName": "Weathered Shotgun",
+      "name": "Weathered Shotgun",
       "weaponType": "Gun",
       "weaponStance": "one-hand",
       "weaponAttack": 20,
@@ -20,7 +20,7 @@
       "weaponGemSlots": 2
     },
     {
-      "weaponName": "Giant's Greatsword",
+      "name": "Giant's Greatsword",
       "weaponType": "Sword",
       "weaponStance": "two-hand",
       "weaponAttack": 40,
@@ -29,7 +29,7 @@
       "weaponGemSlots": 5
     },
     {
-      "weaponName": "Interesting Stick",
+      "name": "Interesting Stick",
       "weaponType": "Wand",
       "weaponStance": "one-hand",
       "weaponAttack": 5,
@@ -38,7 +38,7 @@
       "weaponGemSlots": 2
     },
     {
-      "weaponName": "Herb Sachet",
+      "name": "Herb Sachet",
       "weaponType": "Misc",
       "weaponStance": "one-hand",
       "weaponAttack": 1,
@@ -47,7 +47,7 @@
       "weaponGemSlots": 3
     },
     {
-      "weaponName": "Hero's Sword",
+      "name": "Hero's Sword",
       "weaponType": "Sword",
       "weaponStance": "one-hand",
       "weaponAttack": 25,
@@ -56,7 +56,7 @@
       "weaponGemSlots": 3
     },
     {
-      "weaponName": "Hero's Bow",
+      "name": "Hero's Bow",
       "weaponType": "Bow",
       "weaponStance": "one-hand",
       "weaponAttack": 25,

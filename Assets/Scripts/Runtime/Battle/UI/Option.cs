@@ -1,3 +1,4 @@
+using Jrpg.Runtime.DataClasses.Bases;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,11 @@ namespace Jrpg.Runtime.Battle.UI
         
         [SerializeField] private Color highlightColor = new Color(135, 135, 135, 134);
         
+        [Header("Equipment")] 
+        [SerializeField] private BaseEquipment assignedEquipment;
+
+        public BaseEquipment AssignedEquipment => assignedEquipment;
+        
         protected Image Sprite => sprite;
 
         protected TMP_Text NameText => nameText;
@@ -37,6 +43,24 @@ namespace Jrpg.Runtime.Battle.UI
         private void SetColor(Color color)
         {
             backgroundImage.color = color;
+        }
+
+        public virtual void InitializeOption(string optionName, BaseEquipment equipment)
+        {
+            NameText.text = optionName;
+            assignedEquipment = equipment;
+        }
+        
+        public virtual void InitializeOption(string optionName, BaseEquipment equipment, int cost)
+        {
+            NameText.text = optionName;
+            assignedEquipment = equipment;
+        }
+        
+        public virtual void InitializeOption(string optionName)
+        {
+            NameText.text = optionName;
+            assignedEquipment = null;
         }
     }
 }

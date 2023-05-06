@@ -1,29 +1,34 @@
 using Jrpg.Core;
+using Jrpg.Runtime.DataClasses.Bases;
 using Jrpg.Runtime.DataClasses.EquipmentData;
-using Jrpg.Runtime.DataClasses.ItemData;
 
 namespace Jrpg.Runtime.Systems.EquipmentData
 {
     internal interface IEquipmentDataSystem : ISystem
     {
         /// <summary>
-        /// Gets a weapon from the weapons database using <param name="weaponName"></param>.
+        /// Gets a weapon from the weapons database using <paramref name="weaponName"/>.
         /// </summary>
-        public Weapon GetWeapon(string weaponName);
+        public Weapon GetWeaponByName(string weaponName);
         
         /// <summary>
-        /// Gets a charm from the charms database using <param name="charmName"></param>.
+        /// Gets a charm from the charms database using <paramref name="charmName"/>.
         /// </summary>
-        public Charm GetCharm(string charmName);
+        public Charm GetCharmByName(string charmName);
         
         /// <summary>
-        /// Gets a gem from the gems database using <param name="gemName"></param>.
+        /// Gets a gem from the gems database using <paramref name="gemName"/>.
         /// </summary>
-        public Gem GetGem(string gemName);
+        public Gem GetGemByName(string gemName);
         
         /// <summary>
-        /// Gets a necklace from the necklaces database using <param name="necklaceName"></param>.
+        /// Gets a necklace from the necklaces database using <paramref name="necklaceName"/>.
         /// </summary>
-        public Necklace GetNecklace(string necklaceName);
+        public Necklace GetNecklaceByName(string necklaceName);
+
+        /// <summary>
+        /// Gets a equipment from the equipment database using <paramref name="equipmentName"/>.
+        /// </summary>
+        public BaseEquipment GetEquipmentDataByName<T>(string equipmentName);
     }
 }

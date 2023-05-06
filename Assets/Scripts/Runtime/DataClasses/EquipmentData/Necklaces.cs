@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Jrpg.Runtime.DataClasses.Bases;
 using Newtonsoft.Json;
 
 namespace Jrpg.Runtime.DataClasses.EquipmentData
@@ -21,7 +22,7 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
         
         public Necklace GetNecklace(string necklaceName)
         {
-            foreach (var t in NecklacesDatabase.Where(t => t.NecklaceName == necklaceName))
+            foreach (var t in NecklacesDatabase.Where(t => t.Name == necklaceName))
             {
                 return t;
             }
@@ -33,11 +34,8 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
     /// <summary>
     /// An individual necklace in the necklaces database.
     /// </summary>
-    internal sealed class Necklace
+    internal sealed class Necklace : BaseEquipment
     {
-        [JsonProperty("necklaceName")]
-        public string NecklaceName { get; }
-        
         [JsonProperty("necklaceType")]
         public int Description { get; }
         
@@ -50,7 +48,7 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
             [JsonProperty("gemAttack")] int numCharmSlots
         )
         {
-            NecklaceName = necklaceNameName;
+            Name = necklaceNameName;
             Description = description;
             NumCharmSlots = numCharmSlots;
         }
