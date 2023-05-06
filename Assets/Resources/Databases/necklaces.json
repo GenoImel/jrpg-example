@@ -2,22 +2,22 @@
   "necklaces": [
 
     {
-      "necklaceName": "Nostalgic Locket",
+      "name": "Nostalgic Locket",
       "description": "Contains a picture of a childhood friend.",
       "numCharmSlots": 4
     },
     {
-      "necklaceName": "Stained Silver Chain",
+      "name": "Stained Silver Chain",
       "description": "A thin silver chain that has oxidized.",
       "numCharmSlots": 1
     },
     {
-      "necklaceName": "Simple Gold Chain",
+      "name": "Simple Gold Chain",
       "description": "A thin gold chain.",
       "numCharmSlots": 2
     },
     {
-      "necklaceName": "Stranger's Locket",
+      "name": "Stranger's Locket",
       "description": "This isn't yours. Perhaps find its owner?",
       "numCharmSlots": 5
     }

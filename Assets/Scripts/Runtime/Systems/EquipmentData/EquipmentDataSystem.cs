@@ -1,5 +1,5 @@
+using Jrpg.Runtime.DataClasses.Bases;
 using Jrpg.Runtime.DataClasses.EquipmentData;
-using Jrpg.Runtime.DataClasses.ItemData;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -33,24 +33,48 @@ namespace Jrpg.Runtime.Systems.EquipmentData
             LoadData();
         }
         
-        public Weapon GetWeapon(string weaponName)
+        public Weapon GetWeaponByName(string weaponName)
         {
             return weaponsData.GetWeapon(weaponName);
         }
         
-        public Charm GetCharm(string charmName)
+        public Charm GetCharmByName(string charmName)
         {
             return charmsData.GetCharm(charmName);
         }
         
-        public Gem GetGem(string gemName)
+        public Gem GetGemByName(string gemName)
         {
             return gemsData.GetGem(gemName);
         }
 
-        public Necklace GetNecklace(string necklaceName)
+        public Necklace GetNecklaceByName(string necklaceName)
         {
             return necklacesData.GetNecklace(necklaceName);
+        }
+
+        public BaseEquipment GetEquipmentDataByName<T>(string equipmentName)
+        {
+            if (typeof(T) == typeof(Weapon))
+            {
+                return GetWeaponByName(equipmentName);
+            }
+            else if (typeof(T) == typeof(Charm))
+            {
+                return GetCharmByName(equipmentName);
+            }
+            else if (typeof(T) == typeof(Gem))
+            {
+                return GetGemByName(equipmentName);
+            }
+            else if (typeof(T) == typeof(Necklace))
+            {
+                return GetNecklaceByName(equipmentName);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private void LoadData()

@@ -1,6 +1,6 @@
 using System.Linq;
 using Jrpg.Core;
-using Jrpg.Runtime.Systems.EquipmentData;
+using Jrpg.Runtime.DataClasses.EquipmentData;
 using UnityEngine;
 
 namespace Jrpg.Runtime.Battle.UI
@@ -10,32 +10,12 @@ namespace Jrpg.Runtime.Battle.UI
         [SerializeField] 
         private Option overdriveOptionPrefab;
 
-        private IEquipmentDataSystem equipmentDataSystem;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            
-            equipmentDataSystem = GameManager.GetSystem<IEquipmentDataSystem>();
-        }
-
-        protected override void InitializePanelOptions()
+        protected override void InitializePanel()
         {
             var listAttacks = partyMember.ActiveWeapons.LeftHandWeapon.GemSlots
                 .Concat(partyMember.ActiveWeapons.RightHandWeapon.GemSlots);
 
-            foreach (var attack in listAttacks)
-            {
-                if (string.IsNullOrWhiteSpace(attack) || string.IsNullOrEmpty(attack))
-                {
-                    continue;
-                }
-
-                var gem = equipmentDataSystem.GetGem(attack);
-                var option = Instantiate(optionPrefab, optionsContainer.transform);
-                    option.InitializeAttackOption(gem.GemName, gem);
-                    listOptions.Add(option);
-            }
+            InitializePanelOptions<Gem>(listAttacks);
 
             if (!partyMember.OverdriveAchieved)
             {
@@ -44,8 +24,6 @@ namespace Jrpg.Runtime.Battle.UI
             var overdrive = Instantiate(overdriveOptionPrefab, optionsContainer.transform);
             listOptions.Add(overdrive);
         }
-
-
 
         private void OnUpdateOverdriveAchievedMessage(UpdateOverdriveAchievedMessage message)
         {

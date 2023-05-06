@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Jrpg.Runtime.DataClasses.Bases;
 using Newtonsoft.Json;
 
 namespace Jrpg.Runtime.DataClasses.EquipmentData
@@ -21,7 +22,7 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
         
         public Charm GetCharm(string charmName)
         {
-            foreach (var t in CharmsDatabase.Where(t => t.CharmName == charmName))
+            foreach (var t in CharmsDatabase.Where(t => t.Name == charmName))
             {
                 return t;
             }
@@ -33,11 +34,8 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
     /// <summary>
     /// An individual charm in the charms database.
     /// </summary>
-    internal sealed class Charm
+    internal sealed class Charm : BaseEquipment
     {
-        [JsonProperty("charmName")]
-        public string CharmName { get; }
-        
         [JsonProperty("charmAttack")]
         public int CharmAttack { get; }
         
@@ -51,14 +49,14 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
         public float CharmStatusEffectChance { get; }
 
         public Charm(
-            [JsonProperty("charmName")] string charmName,
+            [JsonProperty("name")] string charmName,
             [JsonProperty("charmAttack")] int charmAttack,
             [JsonProperty("charmHeal")] int charmHeal,
             [JsonProperty("charmStatusEffect")] string charmStatusEffect,
             [JsonProperty("charmStatusEffectChance")] float charmStatusEffectChance
         )
         {
-            CharmName = charmName;
+            Name = charmName;
             CharmAttack = charmAttack;
             CharmHeal = charmHeal;
             CharmStatusEffect = charmStatusEffect;

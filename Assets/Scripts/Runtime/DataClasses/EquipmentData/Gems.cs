@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Jrpg.Runtime.DataClasses.Bases;
 using Newtonsoft.Json;
 
 namespace Jrpg.Runtime.DataClasses.EquipmentData
@@ -21,7 +22,7 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
         
         public Gem GetGem(string gemName)
         {
-            foreach (var t in GemsDatabase.Where(t => t.GemName == gemName))
+            foreach (var t in GemsDatabase.Where(t => t.Name == gemName))
             {
                 return t;
             }
@@ -33,11 +34,8 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
     /// <summary>
     /// An individual gem in the gems database.
     /// </summary>
-    internal sealed class Gem
+    internal sealed class Gem : BaseEquipment
     {
-        [JsonProperty("gemName")]
-        public string GemName { get; }
-        
         [JsonProperty("gemType")]
         public string GemType { get; }
         
@@ -51,14 +49,14 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
         public float GemStatusEffectChance { get; }
 
         public Gem(
-            [JsonProperty("gemName")] string gemName,
+            [JsonProperty("name")] string gemName,
             [JsonProperty("gemType")] string gemType,
             [JsonProperty("gemAttack")] int gemAttack,
             [JsonProperty("gemStatusEffect")] string gemStatusEffect,
             [JsonProperty("gemStatusEffectChance")] float gemStatusEffectChance
         )
         {
-            GemName = gemName;
+            Name = gemName;
             GemType = gemType;
             GemAttack = gemAttack;
             GemStatusEffect = gemStatusEffect;
