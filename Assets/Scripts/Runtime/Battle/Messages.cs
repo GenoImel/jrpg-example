@@ -55,6 +55,16 @@ namespace Jrpg.Runtime.Battle
         }
     }
 
+    internal sealed class UpdateOverdriveAchievedMessage : IMessage
+    {
+        public BattlePartyMember PartyMember { get; }
+        
+        public UpdateOverdriveAchievedMessage(BattlePartyMember partyMember)
+        {
+            PartyMember = partyMember;
+        }
+    }
+
     internal sealed class BattleEntitySelectedMessage : IMessage
     {
         public BaseBattleEntity Entity { get; }

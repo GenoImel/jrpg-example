@@ -15,6 +15,8 @@ namespace Jrpg.Runtime.Battle
         [Header("Scripting")] 
         [SerializeField] 
         private PartyMemberStateMachine stateMachine;
+
+        private ISaveDataSystem saveDataSystem;
         
         private new PartyMember EntityData { get ; set; }
 
@@ -22,8 +24,6 @@ namespace Jrpg.Runtime.Battle
         {
             return EntityData;
         }
-
-        private ISaveDataSystem saveDataSystem;
 
         public void SetData(PartyMember memberData)
         {
