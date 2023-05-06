@@ -76,16 +76,16 @@ MonoBehaviour:
   pageNumberText: {fileID: 2225511976178676351}
   optionsContainer: {fileID: 4386329965399491447}
   canvasGroup: {fileID: 7031310772184507211}
-  attackOptionPrefab: {fileID: 7020424360111604088, guid: d37dbd9f7b41cf54393063d4f5bbb265, type: 3}
-  overdriveOptionPrefab: {fileID: -1313844770527419125, guid: 39071661c63fb3c469e78f6e450676ed, type: 3}
-  attackButton: {fileID: -4256021037253564534, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
+  optionPrefab: {fileID: 7020424360111604088, guid: d37dbd9f7b41cf54393063d4f5bbb265, type: 3}
+  optionFaceButton: {fileID: -4256021037253564534, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
   incrementOptionIndexButton: {fileID: 2228769679593563241, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
   decrementOptionIndexButton: {fileID: 401235817350929183, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
-  otherButtons:
+  otherFaceButtons:
   - {fileID: 4557948942953932904, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
   - {fileID: 256541589240922355, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
   - {fileID: -404835749428702899, guid: bc7945ded6f281b4d900502588feb9f6, type: 3}
-  attackOptions: []
+  listOptions: []
+  overdriveOptionPrefab: {fileID: -1313844770527419125, guid: 39071661c63fb3c469e78f6e450676ed, type: 3}
 --- !u!1001 &4302823105299974583
 PrefabInstance:
   m_ObjectHideFlags: 0

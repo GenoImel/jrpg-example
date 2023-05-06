@@ -2,6 +2,7 @@ using Jrpg.Core;
 using Jrpg.Runtime.Battle.UI;
 using Jrpg.Runtime.DataClasses.Bases;
 using Jrpg.Runtime.DataClasses.Enemy;
+using Jrpg.Runtime.DataClasses.PartyData;
 
 namespace Jrpg.Runtime.Battle
 {
@@ -57,9 +58,9 @@ namespace Jrpg.Runtime.Battle
 
     internal sealed class UpdateOverdriveAchievedMessage : IMessage
     {
-        public BattlePartyMember PartyMember { get; }
+        public PartyMember PartyMember { get; }
         
-        public UpdateOverdriveAchievedMessage(BattlePartyMember partyMember)
+        public UpdateOverdriveAchievedMessage(PartyMember partyMember)
         {
             PartyMember = partyMember;
         }
