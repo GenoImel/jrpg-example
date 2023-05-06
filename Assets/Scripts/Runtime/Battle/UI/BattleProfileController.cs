@@ -1,6 +1,8 @@
 using System.Collections;
+using Jrpg.Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Jrpg.Runtime.Battle.UI
@@ -18,7 +20,7 @@ namespace Jrpg.Runtime.Battle.UI
         private RectTransform magicBar;
 
         [SerializeField] 
-        private RectTransform limitBar;
+        private RectTransform overdriveBar;
 
         [SerializeField] 
         private Image profilePicture;
@@ -33,10 +35,10 @@ namespace Jrpg.Runtime.Battle.UI
         private float maxRestValue = 5f;
 
         [SerializeField] 
-        private float currentLimitValue = 0f;
+        private float currentOverdriveValue = 0f;
 
         [SerializeField] 
-        private float maxLimitValue = 5f;
+        private float maxOverdriveValue = 100f;
 
         [SerializeField] 
         private PartyMemberStateMachine partyMember;
@@ -61,14 +63,27 @@ namespace Jrpg.Runtime.Battle.UI
 
         void Start()
         {
+            InitializeValues();
             InitializeBars();
             StartUpdateRestBar();
         }
 
+        private void InitializeValues()
+        {
+            currentOverdriveValue = partyMember.BattlePartyMember.GetEntityData().OverdriveLevel;
+        }
+
         private void InitializeBars()
         {
-            restBar.localScale = new Vector3(currentRestValue, 1f, 1f);
-            limitBar.localScale = new Vector3(currentLimitValue, 1f, 1f);
+            restBar.localScale = new Vector3(currentRestValue / maxRestValue, 1f, 1f);
+            overdriveBar.localScale = new Vector3(currentOverdriveValue / maxOverdriveValue, 1f, 1f);
+
+            if (currentOverdriveValue / maxOverdriveValue >= 1f)
+            {
+                var partyMemberData = partyMember.BattlePartyMember.GetEntityData();
+                partyMemberData.OverdriveAchieved = true;
+                //GameManager.Publish(new UpdateOverdriveAchievedMessage(partyMember.BattlePartyMember));
+            }
         }
 
         private void StartUpdateRestBar()
@@ -88,7 +103,7 @@ namespace Jrpg.Runtime.Battle.UI
             partyMember.RestingComplete();
         }
 
-
+        
 
     }
 }

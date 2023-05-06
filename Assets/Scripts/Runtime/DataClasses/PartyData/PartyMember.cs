@@ -8,6 +8,12 @@ namespace Jrpg.Runtime.DataClasses.PartyData
     /// </summary>
     internal sealed class PartyMember : BaseEntity
     {
+        [JsonProperty("overdriveLevel")]
+        public int OverdriveLevel { get; set; }
+        
+        [JsonProperty("overdriveAchieved")]
+        public bool OverdriveAchieved { get; set; }
+        
         [JsonProperty("positionOnField")]
         public string PositionOnField { get; }
 
@@ -31,6 +37,8 @@ namespace Jrpg.Runtime.DataClasses.PartyData
             [JsonProperty("name")] string name,
             [JsonProperty("level")] int level,
             [JsonProperty("health")] int health,
+            [JsonProperty("overdriveLevel")] int overdriveLevel,
+            [JsonProperty("overdriveAchieved")] bool overdriveAchieved,
             [JsonProperty("maxHealth")] int maxHealth,
             [JsonProperty("magic")] int magic,
             [JsonProperty("maxMagic")] int maxMagic,
@@ -49,6 +57,8 @@ namespace Jrpg.Runtime.DataClasses.PartyData
             Name = name;
             Level = level;
             Health = health;
+            OverdriveLevel = overdriveLevel;
+            OverdriveAchieved = overdriveAchieved;
             MaxHealth = maxHealth;
             Magic = magic;
             MaxMagic = maxMagic;

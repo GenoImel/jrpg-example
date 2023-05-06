@@ -24,6 +24,8 @@ namespace Jrpg.Runtime.Battle
         [Header("Party Member State")]
         [SerializeField] private Status status = Status.Resting;
 
+        public BattlePartyMember BattlePartyMember => battlePartyMember;
+
         public BattleProfileController ProfileUI => profileUI;
 
         private void Update()

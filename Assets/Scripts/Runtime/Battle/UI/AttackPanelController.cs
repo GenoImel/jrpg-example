@@ -46,6 +46,8 @@ namespace Jrpg.Runtime.Battle.UI
 
         private List<GameObject> totalOptions;
         
+        private BattlePartyMember partyMember;
+        
         private int pageIndex = 0;
         private int optionIndex = 0;
 
@@ -134,8 +136,11 @@ namespace Jrpg.Runtime.Battle.UI
 
             foreach (var attack in attackOptions)
             {
-                Destroy(attack);
+                var attackObject = attack.gameObject;
+                Destroy(attackObject);
             }
+            
+            attackOptions.Clear();
         }
 
         private void InitializePanel(PartyMember partyMember)
@@ -145,14 +150,22 @@ namespace Jrpg.Runtime.Battle.UI
 
             foreach (var attack in listAttacks)
             {
+                if (string.IsNullOrWhiteSpace(attack) || string.IsNullOrEmpty(attack))
+                {
+                    continue;
+                }
+
                 var gem = equipmentDataSystem.GetGem(attack);
                 var option = Instantiate(attackOptionPrefab, optionsContainer.transform);
                     option.InitializeAttackOption(gem.GemName, gem);
                     attackOptions.Add(option);
             }
-            
+
+            if (!partyMember.OverdriveAchieved)
+            {
+                return;
+            }
             var overdrive = Instantiate(overdriveOptionPrefab, optionsContainer.transform);
-            
             attackOptions.Add(overdrive);
         }
 
@@ -168,15 +181,28 @@ namespace Jrpg.Runtime.Battle.UI
 
         private void OnPartyMemberSelected(PartyMemberSelectedMessage message)
         {
+            partyMember = message.PartyMember;
             commandsEnabled = true;
             ResetPanel();
             InitializePanel(message.PartyMember.GetEntityData());
             HighlightCurrentOption();
         }
 
+        private void OnUpdateOverdriveAchievedMessage(UpdateOverdriveAchievedMessage message)
+        {
+            if (message.PartyMember != partyMember)
+            {
+                return;
+            }
+            
+            var overdrive = Instantiate(overdriveOptionPrefab, optionsContainer.transform);
+            attackOptions.Add(overdrive);
+        }
+
         private void AddListeners()
         {
             GameManager.AddListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
+            GameManager.AddListener<UpdateOverdriveAchievedMessage>(OnUpdateOverdriveAchievedMessage);
             
             attackButton.action.performed += OnAttackButtonPressed;
             attackButton.action.Enable();
@@ -197,6 +223,7 @@ namespace Jrpg.Runtime.Battle.UI
         private void RemoveListeners()
         {
             GameManager.RemoveListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
+            GameManager.RemoveListener<UpdateOverdriveAchievedMessage>(OnUpdateOverdriveAchievedMessage);
             
             attackButton.action.performed -= OnAttackButtonPressed;
             attackButton.action.Disable();

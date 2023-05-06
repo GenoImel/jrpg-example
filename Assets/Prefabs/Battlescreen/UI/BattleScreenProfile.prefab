@@ -1522,7 +1522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7998430334325359411}
   m_Layer: 5
-  m_Name: LimitBar
+  m_Name: OverdriveBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1649,13 +1649,13 @@ MonoBehaviour:
   restBar: {fileID: 4918349545500309008}
   healthBar: {fileID: 4194947426018094977}
   magicBar: {fileID: 4319938241496573681}
-  limitBar: {fileID: 1916419145272967586}
+  overdriveBar: {fileID: 1916419145272967586}
   profilePicture: {fileID: 9083164354301916025}
   characterName: {fileID: 4391940153866352905}
   currentRestValue: 0
   maxRestValue: 5
-  currentLimitValue: 0
-  maxLimitValue: 5
+  currentOverdriveValue: 0
+  maxOverdriveValue: 100
   partyMember: {fileID: 0}
 --- !u!1 &7677002463167854401
 GameObject:
