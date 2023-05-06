@@ -62,7 +62,6 @@ namespace Jrpg.Runtime.Battle.UI
         {
             base.AddListeners();
             
-            GameManager.AddListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
             GameManager.AddListener<UpdateOverdriveAchievedMessage>(OnUpdateOverdriveAchievedMessage);
         }
 
@@ -70,7 +69,6 @@ namespace Jrpg.Runtime.Battle.UI
         {
             base.RemoveListeners();
             
-            GameManager.RemoveListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
             GameManager.RemoveListener<UpdateOverdriveAchievedMessage>(OnUpdateOverdriveAchievedMessage);
         }
     }

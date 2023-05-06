@@ -162,6 +162,8 @@ namespace Jrpg.Runtime.Battle.UI
 
         protected virtual void AddListeners()
         {
+            GameManager.AddListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
+            
             optionFaceButton.action.performed += OnOptionFaceButtonPressed;
             optionFaceButton.action.Enable();
             
@@ -180,6 +182,8 @@ namespace Jrpg.Runtime.Battle.UI
 
         protected virtual void RemoveListeners()
         {
+            GameManager.RemoveListener<PartyMemberSelectedMessage>(OnPartyMemberSelected);
+            
             optionFaceButton.action.performed -= OnOptionFaceButtonPressed;
             optionFaceButton.action.Disable();
             
