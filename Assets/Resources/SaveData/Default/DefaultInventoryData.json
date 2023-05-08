@@ -1,11 +1,11 @@
 {
   "inventoryItems" : [
     {
-      "itemName" : "Lite Potion",
+      "name" : "Lite Potion",
       "itemCount" : 5
     },
     {
-      "itemName" : "Lite Ether",
+      "name" : "Lite Ether",
       "itemCount" : 3
     }
   ]

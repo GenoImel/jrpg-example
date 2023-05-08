@@ -34,7 +34,7 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
     /// <summary>
     /// An individual necklace in the necklaces database.
     /// </summary>
-    internal sealed class Necklace : BaseEquipment
+    internal sealed class Necklace : BaseData
     {
         [JsonProperty("necklaceType")]
         public int Description { get; }

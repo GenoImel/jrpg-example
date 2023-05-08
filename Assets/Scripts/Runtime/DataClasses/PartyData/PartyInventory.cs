@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Jrpg.Runtime.DataClasses.Bases;
 using Newtonsoft.Json;
 
 namespace Jrpg.Runtime.DataClasses.PartyData
@@ -21,7 +22,7 @@ namespace Jrpg.Runtime.DataClasses.PartyData
 
         public InventoryItem GetInventoryItem(string itemName)
         {
-            foreach (var t in InventoryItemsList.Where(t => t.ItemName == itemName))
+            foreach (var t in InventoryItemsList.Where(t => t.Name == itemName))
             {
                 return t;
             }
@@ -33,11 +34,8 @@ namespace Jrpg.Runtime.DataClasses.PartyData
     /// <summary>
     /// An individual item in the party inventory.
     /// </summary>
-    internal sealed class InventoryItem
+    internal sealed class InventoryItem : BaseData
     {
-        [JsonProperty("itemName")]
-        public string ItemName { get; }
-        
         [JsonProperty("itemCount")]
         public int ItemCount { get; }
 
@@ -46,7 +44,7 @@ namespace Jrpg.Runtime.DataClasses.PartyData
             [JsonProperty("itemCount")] int itemCount
             )
         {
-            ItemName = itemName;
+            Name = itemName;
             ItemCount = itemCount;
         }
     }

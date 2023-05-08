@@ -8,6 +8,6 @@ namespace Jrpg.Runtime.Systems.ItemData
         /// <summary>
         /// Get an item from the items database using <param name="itemName"></param>.
         /// </summary>
-        public Item GetItem(string itemName);
+        public Item GetItemByName(string itemName);
     }
 }

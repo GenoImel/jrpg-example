@@ -1,4 +1,5 @@
 using Jrpg.Runtime.DataClasses.Bases;
+using Jrpg.Runtime.DataClasses.EquipmentData;
 using TMPro;
 using UnityEngine;
 
@@ -9,10 +10,10 @@ namespace Jrpg.Runtime.Battle.UI
         [Header("Option Cost")] 
         [SerializeField] private TMP_Text optionCostText;
 
-        public override void InitializeOption(string optionName, BaseEquipment equipment, int cost)
+        protected override void InitializeOption(string optionName, Charm charmData)
         {
-            base.InitializeOption(optionName, equipment, cost);
-            optionCostText.text = cost.ToString();
+            base.InitializeOption(optionName, charmData);
+            optionCostText.text = charmData.CharmCost.ToString();
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Linq;
 using Jrpg.Core;
 using Jrpg.Runtime.DataClasses.PartyData;
 using Jrpg.Runtime.Systems.EquipmentData;
+using Jrpg.Runtime.Systems.GameData;
+using Jrpg.Runtime.Systems.ItemData;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -37,25 +39,30 @@ namespace Jrpg.Runtime.Battle.UI
         [SerializeField] 
         protected List<InputActionReference> otherFaceButtons;
         
-        [Header("Attacks")] 
+        [Header("Options")] 
         [SerializeField] 
         protected List<Option> listOptions;
 
         protected List<GameObject> totalOptions;
         
         protected PartyMember partyMember;
+
         
         private IEquipmentDataSystem equipmentDataSystem;
+        protected ISaveDataSystem saveDataSystem;
+        private IItemDataSystem itemDataSystem;
 
-        private int pageIndex = 0;
-        private int optionIndex = 0;
-        private bool commandsEnabled;
+        protected int pageIndex = 0;
+        protected int optionIndex = 0;
+        protected bool commandsEnabled;
 
         protected virtual void Awake()
         {
             SetPanelActive(false);
             
             equipmentDataSystem = GameManager.GetSystem<IEquipmentDataSystem>();
+            saveDataSystem = GameManager.GetSystem<ISaveDataSystem>();
+            itemDataSystem = GameManager.GetSystem<IItemDataSystem>();
         }
 
         protected virtual void OnEnable()
@@ -117,16 +124,19 @@ namespace Jrpg.Runtime.Battle.UI
 
         private void SetPanelActive(bool isActive)
         {
+            ResetIndices();
+            ResetPageNumber();
+            HighlightCurrentOption();
+            
             canvasGroup.alpha = isActive ? 1f : 0f;
             canvasGroup.interactable = isActive;
             canvasGroup.blocksRaycasts = isActive;
         }
 
-        private void ResetPanel()
+        protected virtual void ResetPanel()
         {
-            optionIndex = 0;
-            pageIndex = 0;
-            pageNumberText.text = (pageIndex + 1).ToString();
+            ResetIndices();
+            ResetPageNumber();
 
             if (listOptions == null)
             {
@@ -142,7 +152,18 @@ namespace Jrpg.Runtime.Battle.UI
             listOptions.Clear();
         }
 
-        private void HighlightCurrentOption()
+        private void ResetIndices()
+        {
+            optionIndex = 0;
+            pageIndex = 0;
+        }
+
+        private void ResetPageNumber()
+        {
+            pageNumberText.text = (pageIndex + 1).ToString();
+        }
+
+        protected void HighlightCurrentOption()
         {
             if (!listOptions.Any())
             {
@@ -157,7 +178,7 @@ namespace Jrpg.Runtime.Battle.UI
             listOptions[optionIndex].SetSelected(true);
         }
 
-        private void OnPartyMemberSelected(PartyMemberSelectedMessage message)
+        protected virtual void OnPartyMemberSelected(PartyMemberSelectedMessage message)
         {
             partyMember = message.PartyMember.GetEntityData();
             commandsEnabled = true;
@@ -168,6 +189,22 @@ namespace Jrpg.Runtime.Battle.UI
 
         protected virtual void InitializePanel()
         {
+        }
+
+        protected virtual void InitializePanelOptions(PartyInventory partyInventory)
+        {
+            foreach(var inventoryItem in partyInventory.InventoryItemsList)
+            {
+                if(string.IsNullOrWhiteSpace(inventoryItem.Name) || string.IsNullOrEmpty(inventoryItem.Name))
+                {
+                    continue;
+                }
+
+                var itemData = itemDataSystem.GetItemByName(inventoryItem.Name);
+                var option = Instantiate(optionPrefab, optionsContainer.transform);
+                option.InitializeOption(itemData.Name, inventoryItem, itemData);
+                listOptions.Add(option);
+            }
         }
 
         protected void InitializePanelOptions<T>(IEnumerable<string> tempListOptions)
