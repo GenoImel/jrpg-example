@@ -34,7 +34,7 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
     /// <summary>
     /// An individual weapon in the weapons database.
     /// </summary>
-    internal sealed class Weapon : BaseEquipment
+    internal sealed class Weapon : BaseData
     {
         [JsonProperty("weaponType")]
         public string WeaponType { get; }

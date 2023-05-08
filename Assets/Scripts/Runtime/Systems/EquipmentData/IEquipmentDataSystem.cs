@@ -29,6 +29,6 @@ namespace Jrpg.Runtime.Systems.EquipmentData
         /// <summary>
         /// Gets a equipment from the equipment database using <paramref name="equipmentName"/>.
         /// </summary>
-        public BaseEquipment GetEquipmentDataByName<T>(string equipmentName);
+        public BaseData GetEquipmentDataByName<T>(string equipmentName);
     }
 }

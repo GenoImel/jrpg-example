@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Jrpg.Runtime.DataClasses.Bases;
 using Newtonsoft.Json;
 
 namespace Jrpg.Runtime.DataClasses.ItemData
@@ -21,7 +22,7 @@ namespace Jrpg.Runtime.DataClasses.ItemData
 
         public Item GetItem(string itemName)
         {
-            foreach (var t in ItemsDatabase.Where(t => t.ItemName == itemName))
+            foreach (var t in ItemsDatabase.Where(t => t.Name == itemName))
             {
                 return t;
             }
@@ -33,12 +34,9 @@ namespace Jrpg.Runtime.DataClasses.ItemData
     /// <summary>
     /// An individual item in the items database.
     /// </summary>
-    internal sealed class Item
+    internal sealed class Item : BaseData
     {
-        [JsonProperty("itemName")]
-        public string ItemName { get; }
-        
-        [JsonProperty("itemType")]
+        [JsonProperty("description")]
         public string Description { get; }
         
         [JsonProperty("itemStance")]
@@ -54,8 +52,8 @@ namespace Jrpg.Runtime.DataClasses.ItemData
         public int ItemStatusEffectChance { get; }
 
         public Item(
-            [JsonProperty("itemName")] string itemName,
-            [JsonProperty("itemType")] string itemType,
+            [JsonProperty("Name")] string itemName,
+            [JsonProperty("itemType")] string description,
             [JsonProperty("itemStance")] string itemMode,
             [JsonProperty("itemAttack")] int itemAmount,
             [JsonProperty("itemDefense")] int itemStatusEffect,
@@ -63,8 +61,8 @@ namespace Jrpg.Runtime.DataClasses.ItemData
             
         )
         {
-            ItemName = itemName;
-            Description = itemType;
+            Name = itemName;
+            Description = description;
             ItemMode = itemMode;
             ItemAmount = itemAmount;
             ItemStatusEffect = itemStatusEffect;

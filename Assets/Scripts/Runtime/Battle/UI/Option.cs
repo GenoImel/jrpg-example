@@ -1,4 +1,7 @@
 using Jrpg.Runtime.DataClasses.Bases;
+using Jrpg.Runtime.DataClasses.EquipmentData;
+using Jrpg.Runtime.DataClasses.ItemData;
+using Jrpg.Runtime.DataClasses.PartyData;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,9 +25,9 @@ namespace Jrpg.Runtime.Battle.UI
         [SerializeField] private Color highlightColor = new Color(135, 135, 135, 134);
         
         [Header("Equipment")] 
-        [SerializeField] private BaseEquipment assignedEquipment;
+        [SerializeField] private BaseData assignedData;
 
-        public BaseEquipment AssignedEquipment => assignedEquipment;
+        public BaseData AssignedData => assignedData;
         
         protected Image Sprite => sprite;
 
@@ -45,22 +48,28 @@ namespace Jrpg.Runtime.Battle.UI
             backgroundImage.color = color;
         }
 
-        public virtual void InitializeOption(string optionName, BaseEquipment equipment)
+        public virtual void InitializeOption(string optionName, BaseData data)
         {
             NameText.text = optionName;
-            assignedEquipment = equipment;
+            assignedData = data;
         }
-        
-        public virtual void InitializeOption(string optionName, BaseEquipment equipment, int cost)
+
+        protected virtual void InitializeOption(string optionName, Charm charmData)
         {
             NameText.text = optionName;
-            assignedEquipment = equipment;
+            assignedData = charmData;
         }
-        
+
+        public virtual void InitializeOption(string optionName, InventoryItem inventoryItem, Item itemData)
+        {
+            NameText.text = optionName;
+            assignedData = itemData;
+        }
+
         public virtual void InitializeOption(string optionName)
         {
             NameText.text = optionName;
-            assignedEquipment = null;
+            assignedData = null;
         }
     }
 }

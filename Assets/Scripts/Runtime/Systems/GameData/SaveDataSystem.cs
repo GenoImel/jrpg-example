@@ -1,13 +1,11 @@
-using System;
 using System.IO;
-using System.Linq;
 using Jrpg.Runtime.DataClasses.PartyData;
 using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Jrpg.Runtime.Systems.GameData
 {
-    internal sealed class SaveDataSystem : MonoBehaviour, ISaveDataSystem, IInventorySystem
+    internal sealed class SaveDataSystem : MonoBehaviour, ISaveDataSystem
     {
         [Header("Default Party Data File")]
         [SerializeField] 
@@ -62,7 +60,7 @@ namespace Jrpg.Runtime.Systems.GameData
             return currentPartyData;
         }
 
-        public PartyInventory LoadInventoryData(TextAsset data)
+        private PartyInventory LoadInventoryData(TextAsset data)
         {
             inventoryFileName = data.name;
             isDefault = false;
@@ -88,6 +86,11 @@ namespace Jrpg.Runtime.Systems.GameData
         public PartyMember GetPartyMemberData(string charName)
         {
             return partyData.GetPartyMember(charName);
+        }
+        
+        public PartyInventory GetPartyInventory()
+        {
+            return inventoryData;
         }
 
         public InventoryItem GetInventoryItemData(string itemName)

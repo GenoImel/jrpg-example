@@ -34,7 +34,7 @@ namespace Jrpg.Runtime.DataClasses.EquipmentData
     /// <summary>
     /// An individual gem in the gems database.
     /// </summary>
-    internal sealed class Gem : BaseEquipment
+    internal sealed class Gem : BaseData
     {
         [JsonProperty("gemType")]
         public string GemType { get; }

@@ -4,6 +4,7 @@
       "name": "Healing Touch",
       "charmAttack": 0,
       "charmHeal": 75,
+      "charmCost": 25,
       "charmStatusEffect": "",
       "charmStatusEffectChance": 0.0
     },
@@ -11,6 +12,7 @@
       "name": "Flame Strike",
       "charmAttack": 50,
       "charmHeal": 0,
+      "charmCost": 15,
       "charmStatusEffect": "",
       "charmStatusEffectChance": 0.0
     },
@@ -18,6 +20,7 @@
       "name": "Magical Slap",
       "charmAttack": 25,
       "charmHeal": 0,
+      "charmCost": 10,
       "charmStatusEffect": "Concussed",
       "charmStatusEffectChance": 0.50
     }

@@ -25,6 +25,16 @@ namespace Jrpg.Runtime.Systems.GameData
         /// Returns the data for the entire party.
         /// </summary>
         public PartyData GetPartyData();
+        
+        /// <summary>
+        /// Returns the data for the party inventory.
+        /// </summary>
+        public PartyInventory GetPartyInventory();
+        
+        /// <summary>
+        /// Gets an inventory item from the inventory database using <paramref name="itemName"/>.
+        /// </summary>
+        public InventoryItem GetInventoryItemData(string itemName);
 
         /// <summary>
         /// Retrieve a party member, their stats, and equipment

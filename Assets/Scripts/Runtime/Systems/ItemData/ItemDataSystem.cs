@@ -17,7 +17,7 @@ namespace Jrpg.Runtime.Systems.ItemData
             LoadData();
         }
 
-        public Item GetItem(string itemName)
+        public Item GetItemByName(string itemName)
         {
             return itemsData.GetItem(itemName);
         }

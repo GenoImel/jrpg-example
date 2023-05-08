@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4633759277520088412}
   - component: {fileID: 4072839979853530287}
   - component: {fileID: 6658045626064836051}
+  - component: {fileID: 5154453527995286281}
   m_Layer: 5
   m_Name: ItemOption
   m_TagString: Untagged
@@ -92,6 +93,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &5154453527995286281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851653500353849715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac3e2ce7215a2a41a5ac0e507f30c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 335741025143815677}
+  nameText: {fileID: 2302569919051599219}
+  backgroundImage: {fileID: 4072839979853530287}
+  normalColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 0.5254902}
+  highlightColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 0.5254902}
+  optionCountText: {fileID: 3470809722805671220}
 --- !u!1 &3329247405774263816
 GameObject:
   m_ObjectHideFlags: 0

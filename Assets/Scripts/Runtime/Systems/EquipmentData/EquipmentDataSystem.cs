@@ -53,7 +53,7 @@ namespace Jrpg.Runtime.Systems.EquipmentData
             return necklacesData.GetNecklace(necklaceName);
         }
 
-        public BaseEquipment GetEquipmentDataByName<T>(string equipmentName)
+        public BaseData GetEquipmentDataByName<T>(string equipmentName)
         {
             if (typeof(T) == typeof(Weapon))
             {
