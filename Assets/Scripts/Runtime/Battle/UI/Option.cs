@@ -31,7 +31,7 @@ namespace Jrpg.Runtime.Battle.UI
         
         protected Image Sprite => sprite;
 
-        protected TMP_Text NameText => nameText;
+        private TMP_Text NameText => nameText;
 
         private void Awake()
         {

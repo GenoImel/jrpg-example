@@ -158,7 +158,7 @@ namespace Jrpg.Runtime.Battle.UI
             pageIndex = 0;
         }
 
-        private void ResetPageNumber()
+        protected virtual void ResetPageNumber()
         {
             pageNumberText.text = (pageIndex + 1).ToString();
         }
