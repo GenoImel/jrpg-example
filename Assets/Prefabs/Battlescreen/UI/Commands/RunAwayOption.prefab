@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 5208539873769338761}
   - component: {fileID: 4485001748454778393}
   - component: {fileID: 7710094864542791236}
+  - component: {fileID: 5448995219686788169}
   m_Layer: 5
   m_Name: RunAwayOption
   m_TagString: Untagged
@@ -289,3 +290,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5448995219686788169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8345289892163074452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc7e12299e351e47be8e3cb37a64ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 6518137969979198366}
+  nameText: {fileID: 3354878581351485}
+  backgroundImage: {fileID: 7710094864542791236}
+  normalColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 0.5254902}
+  highlightColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 0.5254902}

@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 4752673985219726377}
   - component: {fileID: 7548375470746066175}
   - component: {fileID: 1156016210953630988}
+  - component: {fileID: 5827885821163669428}
   m_Layer: 5
   m_Name: DefendOption
   m_TagString: Untagged
@@ -289,3 +290,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5827885821163669428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2548741228851697872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d45e22772ee73439311732d206f969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 3181676942947437662}
+  nameText: {fileID: 3997793321371319504}
+  backgroundImage: {fileID: 1156016210953630988}
+  normalColor: {r: 0.16862746, g: 0.16862746, b: 0.16862746, a: 0.5254902}
+  highlightColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 0.5254902}
