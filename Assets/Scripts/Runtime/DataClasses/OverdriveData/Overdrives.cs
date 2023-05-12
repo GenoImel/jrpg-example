@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Jrpg.Runtime.DataClasses.Bases;
 using Newtonsoft.Json;
 
 namespace Jrpg.Runtime.DataClasses.OverdriveData
@@ -21,7 +22,7 @@ namespace Jrpg.Runtime.DataClasses.OverdriveData
         {
             foreach (var t in OverdrivesDatabase)
             {
-                if (t.OverdriveName == overdriveName)
+                if (t.Name == overdriveName)
                 {
                     return t;
                 }
@@ -34,11 +35,8 @@ namespace Jrpg.Runtime.DataClasses.OverdriveData
     /// <summary>
     /// An individual overdrive in the overdrives database.
     /// </summary>
-    internal sealed class Overdrive
+    internal sealed class Overdrive : BaseData
     {
-        [JsonProperty("overdriveName")]
-        public string OverdriveName { get; }
-        
         [JsonProperty("description")]
         public string Description { get; }
         
@@ -59,7 +57,7 @@ namespace Jrpg.Runtime.DataClasses.OverdriveData
             [JsonProperty("overdriveAttack")] int overdriveAttack
         )
         {
-            OverdriveName = overdriveName;
+            Name = overdriveName;
             Description = description;
             PartyMember = partyMember;
             LevelAcquired = levelAcquired;

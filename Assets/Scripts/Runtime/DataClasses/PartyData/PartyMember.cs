@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Jrpg.Runtime.DataClasses.Bases;
 using Newtonsoft.Json;
 
@@ -19,6 +20,9 @@ namespace Jrpg.Runtime.DataClasses.PartyData
 
         [JsonProperty("handedness")]
         public string Handedness { get; }
+        
+        [JsonProperty("overdrives")]
+        public List<string> Overdrives { get; }
 
         [JsonProperty("equipment")]
         public Equipment Equipment { get; }
@@ -48,6 +52,7 @@ namespace Jrpg.Runtime.DataClasses.PartyData
             [JsonProperty("baseSpeed")] int baseSpeed,
             [JsonProperty("positionOnField")] string positionOnField,
             [JsonProperty("handedness")] string handedness,
+            [JsonProperty("overdrives")] List<string> overdrives,
             [JsonProperty("equipment")] Equipment equipment, 
             [JsonProperty("activeRings")] ActiveRings activeRings,
             [JsonProperty("activeNecklace")] ActiveNecklace activeNecklace,
@@ -68,6 +73,7 @@ namespace Jrpg.Runtime.DataClasses.PartyData
             BaseSpeed = baseSpeed;
             PositionOnField = positionOnField;
             Handedness = handedness;
+            Overdrives = overdrives;
             Equipment = equipment;
             ActiveRings = activeRings;
             ActiveNecklace = activeNecklace;

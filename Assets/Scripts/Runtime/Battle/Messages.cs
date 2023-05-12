@@ -66,6 +66,10 @@ namespace Jrpg.Runtime.Battle
         }
     }
 
+    internal sealed class ActivateOverdriveMessage : IMessage
+    {
+    }
+
     internal sealed class BattleEntitySelectedMessage : IMessage
     {
         public BaseBattleEntity Entity { get; }

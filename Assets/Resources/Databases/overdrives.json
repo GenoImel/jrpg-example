@@ -11,21 +11,21 @@
       "name" : "Trance",
       "description" : "Go into a trance and do more damage.",
       "partyMember" : "PartyMember001",
-      "levelAcquired" : "10",
-      "overdriveAttack" : "200",
+      "levelAcquired" : "5",
+      "overdriveAttack" : "200"
     },
     {
       "name" : "Rage",
       "description" : "Rage and do more damage.",
       "partyMember" : "PartyMember002",
-      "levelAcquired" : "15",
+      "levelAcquired" : "7",
       "overdriveAttack" : "250"
     },
     {
       "name" : "Berserk",
       "description" : "Enter into a berserker state and do more damage.",
       "partyMember" : "PartyMember003",
-      "levelAcquired" : "20",
+      "levelAcquired" : "5",
       "overdriveAttack" : "300"
     }
   ]

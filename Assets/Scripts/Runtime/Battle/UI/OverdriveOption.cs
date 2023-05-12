@@ -1,8 +1,5 @@
 using Jrpg.Runtime.DataClasses.OverdriveData;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 namespace Jrpg.Runtime.Battle.UI
 {
@@ -15,7 +12,7 @@ namespace Jrpg.Runtime.Battle.UI
         
         public void InitializeOverdriveOption(Overdrive overdrive)
         {
-            nameText.text = overdrive.OverdriveName;
+            nameText.text = overdrive.Name;
             assignedOverdrive = overdrive;
         }
     }

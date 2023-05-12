@@ -110,8 +110,8 @@ namespace Jrpg.Runtime.Battle.UI
                 SetPanelActive(true);
                 return;
             }
-            
-            //select attack, switch to targeting panel?
+
+            listOptions[optionIndex].OnClick();
         }
 
         private void OnAnyOtherFaceButtonPressed(InputAction.CallbackContext context)
@@ -163,7 +163,7 @@ namespace Jrpg.Runtime.Battle.UI
             pageNumberText.text = (pageIndex + 1).ToString();
         }
 
-        protected void HighlightCurrentOption()
+        private void HighlightCurrentOption()
         {
             if (!listOptions.Any())
             {
@@ -205,6 +205,7 @@ namespace Jrpg.Runtime.Battle.UI
                 option.InitializeOption(itemData.Name, inventoryItem, itemData);
                 listOptions.Add(option);
             }
+            HighlightCurrentOption();
         }
 
         protected void InitializePanelOptions<T>(IEnumerable<string> tempListOptions)
@@ -221,6 +222,24 @@ namespace Jrpg.Runtime.Battle.UI
                     option.InitializeOption(optionData.Name, optionData);
                     listOptions.Add(option);
             }
+            HighlightCurrentOption();
+        }
+
+        protected void InitializePanelOptions<T>(IEnumerable<string> tempListOptions, Option otherOptionPrefab)
+        {
+            foreach (var tempOption in tempListOptions)
+            {
+                if(string.IsNullOrWhiteSpace(tempOption) || string.IsNullOrEmpty(tempOption))
+                {
+                    continue;
+                }
+
+                var optionData = equipmentDataSystem.GetEquipmentDataByName<T>(tempOption);
+                var option = Instantiate(otherOptionPrefab, optionsContainer.transform);
+                option.InitializeOption(optionData.Name, optionData);
+                listOptions.Add(option);
+            }
+            HighlightCurrentOption();
         }
 
         protected virtual void AddListeners()
