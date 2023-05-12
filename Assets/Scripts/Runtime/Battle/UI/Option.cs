@@ -48,6 +48,11 @@ namespace Jrpg.Runtime.Battle.UI
             backgroundImage.color = color;
         }
 
+        public virtual void OnClick()
+        {
+            
+        }
+
         public virtual void InitializeOption(string optionName, BaseData data)
         {
             NameText.text = optionName;

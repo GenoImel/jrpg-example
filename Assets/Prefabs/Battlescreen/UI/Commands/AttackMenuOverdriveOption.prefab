@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 790597656574374862}
   - component: {fileID: 2579736652109538072}
   - component: {fileID: 6559168708406135531}
-  - component: {fileID: -1313844770527419125}
+  - component: {fileID: 6128760014969638905}
   m_Layer: 5
   m_Name: AttackMenuOverdriveOption
   m_TagString: Untagged
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-1313844770527419125
+--- !u!114 &6128760014969638905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7517304969578751799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 175b1e0be4c1447bacb97763311ab6c1, type: 3}
+  m_Script: {fileID: 11500000, guid: ce01cbe885524d9c8c23220725199731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 7434231309157987257}

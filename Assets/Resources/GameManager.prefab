@@ -48,6 +48,7 @@ MonoBehaviour:
   charmsDataFile: {fileID: 4900000, guid: 620109ead483410790a85c339c040e44, type: 3}
   gemsDataFile: {fileID: 4900000, guid: 07bfb709c562433ab7062162451d2d82, type: 3}
   necklacesDataFile: {fileID: 4900000, guid: 49e890364c184ea98115abbd3a444889, type: 3}
+  overdrivesDataFile: {fileID: 4900000, guid: 8d6d9e799a584eb19f72ecc637d6436a, type: 3}
 --- !u!1 &2097759874764777842
 GameObject:
   m_ObjectHideFlags: 0

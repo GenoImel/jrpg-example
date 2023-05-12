@@ -15,6 +15,7 @@
       "baseSpeed": 12,
       "positionOnField": "front",
       "handedness": "right",
+      "overdrives": ["XR57"],
       "equipment":
       {
         "hat": "Feathered Cap",
@@ -66,6 +67,7 @@
       "baseSpeed": 5,
       "positionOnField": "front",
       "handedness": "right",
+        "overdrives": ["Berserk"],
       "equipment":
       {
         "hat": "Fez",
@@ -117,6 +119,7 @@
       "baseSpeed": 18,
       "positionOnField": "back",
       "handedness": "left",
+      "overdrives": ["Trance"],
       "equipment":
       {
         "hat": "Silver Circlet",
@@ -168,6 +171,7 @@
       "baseSpeed": 15,
       "positionOnField": "front",
       "handedness": "left",
+      "overdrives": ["Rage"],
       "equipment": {
         "hat": "Elf Hat",
         "shirt": "Green Tunic",

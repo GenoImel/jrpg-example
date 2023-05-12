@@ -1,5 +1,6 @@
 using Jrpg.Runtime.DataClasses.Bases;
 using Jrpg.Runtime.DataClasses.EquipmentData;
+using Jrpg.Runtime.DataClasses.OverdriveData;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -22,11 +23,16 @@ namespace Jrpg.Runtime.Systems.EquipmentData
         [Header("Necklaces Data File")] 
         [SerializeField] 
         private TextAsset necklacesDataFile;
+        
+        [Header("Overdrives Data File")]
+        [SerializeField]
+        private TextAsset overdrivesDataFile;
 
         private Weapons weaponsData;
         private Charms charmsData;
         private Gems gemsData;
         private Necklaces necklacesData;
+        private Overdrives overdrivesData;
 
         private void Awake()
         {
@@ -52,6 +58,11 @@ namespace Jrpg.Runtime.Systems.EquipmentData
         {
             return necklacesData.GetNecklace(necklaceName);
         }
+        
+        public Overdrive GetOverdriveByName(string overdriveName)
+        {
+            return overdrivesData.GetOverdrive(overdriveName);
+        }
 
         public BaseData GetEquipmentDataByName<T>(string equipmentName)
         {
@@ -71,6 +82,10 @@ namespace Jrpg.Runtime.Systems.EquipmentData
             {
                 return GetNecklaceByName(equipmentName);
             }
+            else if (typeof(T) == typeof(Overdrive))
+            {
+                return GetOverdriveByName(equipmentName);
+            }
             else
             {
                 return null;
@@ -87,6 +102,8 @@ namespace Jrpg.Runtime.Systems.EquipmentData
                 .DeserializeObject<Gems>(gemsDataFile.text);
             necklacesData = JsonConvert
                 .DeserializeObject<Necklaces>(necklacesDataFile.text);
+            overdrivesData = JsonConvert
+                .DeserializeObject<Overdrives>(overdrivesDataFile.text);
         }
     }
 }
